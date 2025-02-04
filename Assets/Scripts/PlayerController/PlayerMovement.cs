@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class PlayerMovement : PlayerComponent
 {
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    public override void InitializeComponent(PlayerController controller)
+    {
+        base.InitializeComponent(controller);
+    }
+
     void Update()
     {
         

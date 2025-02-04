@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class PlayerComponent : MonoBehaviour
 {
-    // Start is called before the first frame update
+    PlayerController controller;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    virtual public void InitializeComponent(PlayerController controller)
+    {
+        this.controller = controller;
+    }
+
     void Update()
     {
         
