@@ -16,6 +16,11 @@ public class PlayerComponent : MonoBehaviour
         this.controller = controller;
     }
 
+    virtual public void UpdateComponent()
+    {
+
+    }
+
     void Update()
     {
         

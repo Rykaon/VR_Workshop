@@ -14,6 +14,11 @@ public class PlayerMovement : PlayerComponent
         base.InitializeComponent(controller);
     }
 
+    public override void UpdateComponent()
+    {
+
+    }
+
     void Update()
     {
         

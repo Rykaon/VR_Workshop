@@ -14,6 +14,11 @@ public class PlayerGrab : PlayerComponent
         base.InitializeComponent(controller);
     }
 
+    public override void UpdateComponent()
+    {
+
+    }
+
     void Update()
     {
         
