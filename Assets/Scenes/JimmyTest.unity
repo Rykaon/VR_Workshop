@@ -283,6 +283,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4a916100df83f47af69b1a7ebbd49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pinch:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Pinch
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 02de6d16-8dc0-44e1-8857-89e9b0521108
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!114 &108773690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +325,8 @@ MonoBehaviour:
   cameraMain: {fileID: 2033759033}
   leftController: {fileID: 1642587847}
   rightController: {fileID: 658788188}
+  leftTrigger: {fileID: 1642587848}
+  rightTrigger: {fileID: 658788189}
 --- !u!1 &317806283
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +726,8 @@ GameObject:
   - component: {fileID: 658788186}
   - component: {fileID: 658788185}
   - component: {fileID: 658788184}
+  - component: {fileID: 658788189}
+  - component: {fileID: 658788190}
   m_Layer: 0
   m_Name: Right Controller
   m_TagString: Untagged
@@ -1343,6 +1359,39 @@ MonoBehaviour:
     m_Reference: {fileID: 875253871413052681, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!114 &658788189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658788182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc23308ec0f83284a9808cccf39359f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &658788190
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658788182}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5025
+  m_Center: {x: 0, y: -1.1176, z: 2.177}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,6 +1455,8 @@ GameObject:
   - component: {fileID: 1642587845}
   - component: {fileID: 1642587844}
   - component: {fileID: 1642587843}
+  - component: {fileID: 1642587848}
+  - component: {fileID: 1642587849}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: Untagged
@@ -2037,6 +2088,39 @@ MonoBehaviour:
     m_Reference: {fileID: 7779212132400271959, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!114 &1642587848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642587841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc23308ec0f83284a9808cccf39359f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &1642587849
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642587841}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5025
+  m_Center: {x: 0, y: -1.1176, z: 2.177}
 --- !u!1 &2033759032
 GameObject:
   m_ObjectHideFlags: 0
