@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : PlayerComponent
 {
-    public InputActionProperty pinch;
+    public InputActionProperty grab;
+
     void Start()
     {
         
@@ -23,8 +25,10 @@ public class PlayerMovement : PlayerComponent
 
     void Update()
     {
-        float pinchValue = pinch.action.ReadValue<float>();
-
-        Debug.Log(pinchValue);
+        float gripValue = grab.action.ReadValue<float>();
+        if (gripValue >= 1)
+        {
+            Debug.Log("Pressure");
+        }
     }
 }
