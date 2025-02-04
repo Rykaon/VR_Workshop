@@ -1,18 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class GrabbableObject : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool isGrab = false;
+    [SerializeField] XRGrabInteractable grabInteractible;
+    [SerializeField] Rigidbody rigidBody;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void SetIsGrab(bool value)
     {
-        
+        if (isGrab != value)
+        {
+            isGrab = value;
+
+            if (value)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+    }
+
+    protected virtual void OnCollisionEnter(Collision collision)
+    {
+        if (isGrab)
+        {
+            
+        }
     }
 }
