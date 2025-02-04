@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -243,6 +243,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 108773688}
+  - component: {fileID: 108773691}
+  - component: {fileID: 108773690}
+  - component: {fileID: 108773689}
   m_Layer: 0
   m_Name: Camera Offset
   m_TagString: Untagged
@@ -268,6 +271,48 @@ Transform:
   - {fileID: 658788183}
   m_Father: {fileID: 317806286}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &108773689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108773687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4a916100df83f47af69b1a7ebbd49b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &108773690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108773687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd74293c4523e1c44bc60be576be47a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &108773691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108773687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfffc0fef511dfa41b2798c4f34f4e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 108773689}
+  grab: {fileID: 108773690}
+  inputAction: {fileID: 0}
+  cameraMain: {fileID: 2033759033}
+  leftController: {fileID: 1642587847}
+  rightController: {fileID: 658788188}
 --- !u!1 &317806283
 GameObject:
   m_ObjectHideFlags: 0

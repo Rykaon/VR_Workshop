@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
@@ -12,8 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerGrab grab;
     public InputActionAsset inputAction;
     public Transform cameraMain;
-    public XRController leftController;
-    public XRController rightController;
+    public ActionBasedController leftController;
+    public ActionBasedController rightController;
 
     void Start()
     {
