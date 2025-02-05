@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerComponent : MonoBehaviour
 {
-    protected PlayerController controller;
+    public PlayerController controller;
 
     void Start()
     {

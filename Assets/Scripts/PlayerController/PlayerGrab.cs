@@ -22,6 +22,10 @@ public class PlayerGrab : PlayerComponent
         {
             return;
         }
+        else if (value && grabObject != null)
+        {
+            return;
+        }
 
         XRDirectInteractor interactor;
 
