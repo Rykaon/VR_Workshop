@@ -12,8 +12,8 @@ public class PlayerGrab : PlayerComponent
     public override void InitializeComponent(PlayerController controller)
     {
         base.InitializeComponent(controller);
-        controller.leftInteractor.interactionLayers = InteractionLayerMask.GetMask("GrabObjects");
-        controller.rightInteractor.interactionLayers = InteractionLayerMask.GetMask("GrabObjects");
+        //controller.leftInteractor.interactionLayers = InteractionLayerMask.GetMask("GrabObjects");
+        //controller.rightInteractor.interactionLayers = InteractionLayerMask.GetMask("GrabObjects");
     }
 
     private void SetGrip(HandTrigger hand, bool value)

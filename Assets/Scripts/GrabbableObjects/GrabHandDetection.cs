@@ -11,10 +11,14 @@ public class GrabHandDetection : MonoBehaviour
     public HandTrigger trigger;
     private string activeHand = ""; // "LeftHand" ou "RightHand"
 
-    public void OnHoverEnter(SelectEnterEventArgs args)
+    public void OnHoverEnter(HoverEnterEventArgs args)
     {
         XRBaseInteractor interactor = args.interactorObject as XRBaseInteractor;
-        grab = interactor.transform.parent.GetComponentInParent<PlayerGrab>();
+        
+        if (grab == null)
+        {
+            grab = GameObject.Find("Camera Offset").GetComponent<PlayerGrab>();
+        }
 
         if (grab == null)
         {
@@ -34,11 +38,12 @@ public class GrabHandDetection : MonoBehaviour
 
         if (!trigger.grabbableObjects.Contains(grabbableObject))
         {
+            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             trigger.grabbableObjects.Add(grabbableObject);
         }
     }
 
-    public void OnHoverExit(SelectExitEventArgs args)
+    public void OnHoverExit(HoverExitEventArgs args)
     {
         if (trigger.grabbableObjects.Contains(grabbableObject))
         {

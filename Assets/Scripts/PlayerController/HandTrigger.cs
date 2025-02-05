@@ -8,7 +8,7 @@ public class HandTrigger : MonoBehaviour
 {
     public List<GrabbableObject> grabbableObjects = new List<GrabbableObject>();
 
-    /*private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name);
         if (other.TryGetComponent<GrabbableObject>(out GrabbableObject grab))
@@ -30,7 +30,7 @@ public class HandTrigger : MonoBehaviour
                 grabbableObjects.Remove(grab);
             }
         }
-    }*/
+    }
 
     public GrabbableObject GetClosestGrabObject()
     {

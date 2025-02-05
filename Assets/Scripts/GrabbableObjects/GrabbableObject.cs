@@ -3,18 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Filtering;
 
 public class GrabbableObject : MonoBehaviour
 {
-    public bool canBeGrab = false;
+    public bool canBeGrab = true;
     public bool isGrab = false;
     [SerializeField] XRGrabInteractable grabInteractable;
-    [SerializeField] Rigidbody rigidBody;
     protected XRDirectInteractor interactor;
+    [SerializeField] protected XRInteractionManager interactionManager;
 
     [SerializeField] List<Material> grabbable;
     [SerializeField] List<Material> ungrabbable;
-    MeshRenderer renderer;
+    MeshRenderer meshRenderer;
 
     void Start()
     {
@@ -23,10 +24,9 @@ public class GrabbableObject : MonoBehaviour
 
     protected virtual void InitializeObject()
     {
-        //grabInteractible.enabled = canBeGrab;
-
-        renderer = GetComponent<MeshRenderer>();
         SetCanBeGrab(canBeGrab);
+        grabInteractable.selectFilters.Add(new CanBeGrabbedFilter(this));
+        interactionManager = GameObject.Find("XR Interaction Manager").GetComponent<XRInteractionManager>();
     }
 
     protected virtual void SetCanBeGrab(bool canBeGrab)
@@ -35,23 +35,18 @@ public class GrabbableObject : MonoBehaviour
 
         if (canBeGrab)
         {
-            grabInteractable.interactionLayers = InteractionLayerMask.GetMask("GrabObjects");
-            renderer.SetMaterials(grabbable);
             Debug.Log("SetCanGrab to True // " + isGrab);
 
             if (isGrab)
             {
                 SelectEnterEventArgs enterEventArgs = new SelectEnterEventArgs();
                 enterEventArgs.interactorObject = interactor;
-
-                grabInteractable.selectEntered.Invoke(enterEventArgs);
-                Debug.Log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+                interactionManager.SelectEnter(interactor as IXRSelectInteractor, grabInteractable as IXRSelectInteractable);
+                Debug.Log("ForceSelect");
             }
         }
         else
         {
-            grabInteractable.interactionLayers = InteractionLayerMask.GetMask("IgnoreInteractions");
-            renderer.SetMaterials(ungrabbable);
             Debug.Log("SetCanGrab to False");
         }
     }
@@ -65,12 +60,10 @@ public class GrabbableObject : MonoBehaviour
             if (value)
             {
                 this.interactor = interactor;
-                //SetCanBeGrab(true);
             }
             else
             {
                 this.interactor = null;
-                //SetCanBeGrab(false);
             }
         }
     }
@@ -85,9 +78,9 @@ public class GrabbableObject : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             SetCanBeGrab(!canBeGrab);
-        }
+        }*/
     }
 }
