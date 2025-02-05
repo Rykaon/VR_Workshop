@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlayerGrab : PlayerComponent
 {
@@ -11,6 +12,8 @@ public class PlayerGrab : PlayerComponent
     public override void InitializeComponent(PlayerController controller)
     {
         base.InitializeComponent(controller);
+        controller.leftInteractor.interactionLayers = InteractionLayerMask.GetMask("GrabObjects");
+        controller.rightInteractor.interactionLayers = InteractionLayerMask.GetMask("GrabObjects");
     }
 
     private void SetGrip(HandTrigger hand, bool value)

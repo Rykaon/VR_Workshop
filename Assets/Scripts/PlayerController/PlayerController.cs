@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public Transform cameraMain;
     public ActionBasedController leftController;
     public ActionBasedController rightController;
+    public XRDirectInteractor leftInteractor;
+    public XRDirectInteractor rightInteractor;
     public HandTrigger leftTrigger;
     public HandTrigger rightTrigger;
 
