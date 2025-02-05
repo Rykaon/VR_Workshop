@@ -2,17 +2,20 @@ using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class HandTrigger : MonoBehaviour
 {
-    List<GrabbableObject> grabbableObjects;
+    public List<GrabbableObject> grabbableObjects = new List<GrabbableObject>();
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.name);
         if (other.TryGetComponent<GrabbableObject>(out GrabbableObject grab))
         {
             if (!grabbableObjects.Contains(grab))
             {
+                Debug.Log("aaaaaaadd");
                 grabbableObjects.Add(grab);
             }
         }
@@ -27,14 +30,17 @@ public class HandTrigger : MonoBehaviour
                 grabbableObjects.Remove(grab);
             }
         }
-    }
+    }*/
 
     public GrabbableObject GetClosestGrabObject()
     {
-        if (grabbableObjects.Count == 0)
+        if (grabbableObjects == null || grabbableObjects.Count == 0)
         {
+            Debug.Log("yo");
             return null;
         }
+
+        Debug.Log("ya");
 
         float minDistance = float.MaxValue;
         int index = -1;
@@ -60,13 +66,13 @@ public class HandTrigger : MonoBehaviour
         }
     }
 
-    public void AttachGrabbableObject(GrabbableObject grab)
+    public void AttachGrabbableObject(GrabbableObject grab, XRDirectInteractor interactor)
     {
-        grab.SetIsGrab(true);
+        grab.SetIsGrab(true, interactor);
     }
 
     public void DettachGrabbableObject(GrabbableObject grab)
     {
-        grab.SetIsGrab(false);
+        grab.SetIsGrab(false, null);
     }
 }
