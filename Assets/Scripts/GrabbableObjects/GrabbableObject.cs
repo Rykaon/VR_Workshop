@@ -7,15 +7,12 @@ using UnityEngine.XR.Interaction.Toolkit.Filtering;
 
 public class GrabbableObject : MonoBehaviour
 {
-    public bool canBeGrab = true;
-    public bool isGrab = false;
-    [SerializeField] XRGrabInteractable grabInteractable;
+    public bool canBeGrab;
+    public bool isGrab;
+    [SerializeField] protected Rigidbody body;
+    [SerializeField] protected XRGrabInteractable grabInteractable;
+    protected XRInteractionManager interactionManager;
     protected XRDirectInteractor interactor;
-    [SerializeField] protected XRInteractionManager interactionManager;
-
-    [SerializeField] List<Material> grabbable;
-    [SerializeField] List<Material> ungrabbable;
-    MeshRenderer meshRenderer;
 
     void Start()
     {
