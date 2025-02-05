@@ -352,6 +352,36 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!1 &610502958 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6733349667411237925, guid: 895f6f3c2d334633b5800312285058d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1530264633}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &610502961 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3385890772825029785, guid: 895f6f3c2d334633b5800312285058d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1530264633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610502958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4253f32900bcc4d499d675566142ded0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &610502962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610502958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc23308ec0f83284a9808cccf39359f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &667042167
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,8 +749,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBeGrab: 0
   isGrab: 0
-  grabInteractible: {fileID: 865225614}
+  grabInteractable: {fileID: 865225614}
   rigidBody: {fileID: 865225615}
+  grabbable: []
+  ungrabbable: []
 --- !u!65 &865225617
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -831,18 +863,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4a916100df83f47af69b1a7ebbd49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grab:
+  isClimbing: 0
+  leftHandVelocity:
     m_UseReference: 0
     m_Action:
-      m_Name: Grab
+      m_Name: Left Hand Velocity
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: a1f32c25-cfa3-4fc0-9296-4a0e477c251a
+      m_Id: e6ea7412-e6ba-4785-a83b-f1630ecf2781
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
+  rightHandVelocity:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Right Hand Velocity
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 67ae66cf-bdca-49e6-92c8-fe75999db184
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  turnCamera:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Turn Camera
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 30b0490b-f058-4c81-904b-387a53233768
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  speedMultiplier: 0
+  playerCamera: {fileID: 0}
+  DebugText: {fileID: 0}
 --- !u!114 &869594080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,8 +921,40 @@ MonoBehaviour:
   cameraMain: {fileID: 1530264637}
   leftController: {fileID: 1530264636}
   rightController: {fileID: 1530264635}
-  leftTrigger: {fileID: 0}
-  rightTrigger: {fileID: 0}
+  leftInteractor: {fileID: 1160543884}
+  rightInteractor: {fileID: 610502961}
+  leftTrigger: {fileID: 1160543885}
+  rightTrigger: {fileID: 610502962}
+--- !u!1 &1160543881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3412649390972202448, guid: 895f6f3c2d334633b5800312285058d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1530264633}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1160543884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6688015753839463788, guid: 895f6f3c2d334633b5800312285058d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1530264633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160543881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4253f32900bcc4d499d675566142ded0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1160543885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160543881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc23308ec0f83284a9808cccf39359f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1530264633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1016,6 +1108,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1530264640}
+    - targetCorrespondingSourceObject: {fileID: 3412649390972202448, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1160543885}
+    - targetCorrespondingSourceObject: {fileID: 6733349667411237925, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 610502962}
   m_SourcePrefab: {fileID: 100100000, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
 --- !u!1 &1530264634 stripped
 GameObject:

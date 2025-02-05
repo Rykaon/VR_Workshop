@@ -23,6 +23,17 @@ public class PlayerGrab : PlayerComponent
             return;
         }
 
+        XRDirectInteractor interactor;
+
+        if (hand == controller.leftTrigger)
+        {
+            interactor = controller.leftInteractor;
+        }
+        else
+        {
+            interactor = controller.rightInteractor;
+        }
+
         if (isGrabbing != value)
         {
             isGrabbing = value;
@@ -34,7 +45,7 @@ public class PlayerGrab : PlayerComponent
                 if (grab != null)
                 {
                     grabObject = grab;
-                    hand.AttachGrabbableObject(grabObject);
+                    hand.AttachGrabbableObject(grabObject, interactor);
                 }
             }
             else

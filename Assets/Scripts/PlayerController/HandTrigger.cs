@@ -2,6 +2,7 @@ using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class HandTrigger : MonoBehaviour
 {
@@ -60,13 +61,13 @@ public class HandTrigger : MonoBehaviour
         }
     }
 
-    public void AttachGrabbableObject(GrabbableObject grab)
+    public void AttachGrabbableObject(GrabbableObject grab, XRDirectInteractor interactor)
     {
-        grab.SetIsGrab(true);
+        grab.SetIsGrab(true, interactor);
     }
 
     public void DettachGrabbableObject(GrabbableObject grab)
     {
-        grab.SetIsGrab(false);
+        grab.SetIsGrab(false, null);
     }
 }

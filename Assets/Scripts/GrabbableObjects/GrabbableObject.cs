@@ -10,6 +10,11 @@ public class GrabbableObject : MonoBehaviour
     public bool isGrab = false;
     [SerializeField] XRGrabInteractable grabInteractable;
     [SerializeField] Rigidbody rigidBody;
+    protected XRDirectInteractor interactor;
+
+    [SerializeField] List<Material> grabbable;
+    [SerializeField] List<Material> ungrabbable;
+    MeshRenderer renderer;
 
     void Start()
     {
@@ -20,6 +25,7 @@ public class GrabbableObject : MonoBehaviour
     {
         //grabInteractible.enabled = canBeGrab;
 
+        renderer = GetComponent<MeshRenderer>();
         SetCanBeGrab(canBeGrab);
     }
 
@@ -30,14 +36,27 @@ public class GrabbableObject : MonoBehaviour
         if (canBeGrab)
         {
             grabInteractable.interactionLayers = InteractionLayerMask.GetMask("GrabObjects");
+            renderer.SetMaterials(grabbable);
+            Debug.Log("SetCanGrab to True // " + isGrab);
+
+            if (isGrab)
+            {
+                SelectEnterEventArgs enterEventArgs = new SelectEnterEventArgs();
+                enterEventArgs.interactorObject = interactor;
+
+                grabInteractable.selectEntered.Invoke(enterEventArgs);
+                Debug.Log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+            }
         }
         else
         {
             grabInteractable.interactionLayers = InteractionLayerMask.GetMask("IgnoreInteractions");
+            renderer.SetMaterials(ungrabbable);
+            Debug.Log("SetCanGrab to False");
         }
     }
 
-    public virtual void SetIsGrab(bool value)
+    public virtual void SetIsGrab(bool value, XRDirectInteractor interactor)
     {
         if (isGrab != value)
         {
@@ -45,11 +64,13 @@ public class GrabbableObject : MonoBehaviour
 
             if (value)
             {
-                SetCanBeGrab(true);
+                this.interactor = interactor;
+                //SetCanBeGrab(true);
             }
             else
             {
-                SetCanBeGrab(false);
+                this.interactor = null;
+                //SetCanBeGrab(false);
             }
         }
     }
@@ -59,6 +80,14 @@ public class GrabbableObject : MonoBehaviour
         if (isGrab)
         {
             
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SetCanBeGrab(!canBeGrab);
         }
     }
 }
