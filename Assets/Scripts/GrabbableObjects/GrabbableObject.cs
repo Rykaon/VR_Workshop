@@ -86,7 +86,8 @@ public class GrabbableObject : MonoBehaviour
     private void InitNoGrav()
     {
         GetComponent<Rigidbody>().useGravity = false;
-        Vector3 forceStartGrav = new Vector3(Random.Range(-0.5f,0.5f), Random.Range(2,3), Random.Range(-0.5f, 0.5f));
-        //GetComponent<Rigidbody>().AddForce(forceStartGrav * 0.0000001f);
+        Vector3 forceStartGrav = new Vector3(Random.Range(-0.5f,0.5f), Random.Range(2.5f,3), Random.Range(-0.5f, 0.5f));
+        GetComponent<Rigidbody>().AddForce(forceStartGrav * Random.Range(0.008f,0.02f));
+        Debug.Log("oui");
     }
 }
