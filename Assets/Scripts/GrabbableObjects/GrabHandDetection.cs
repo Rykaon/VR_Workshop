@@ -36,9 +36,9 @@ public class GrabHandDetection : MonoBehaviour
             trigger = grab.controller.rightTrigger;
         }
 
-        if (!trigger.grabbableObjects.Contains(grabbableObject))
+        if (!trigger.grabbableObjects.Contains(grabbableObject) && !grabbableObject.isKinematic)
         {
-            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            Debug.Log("add");
             trigger.grabbableObjects.Add(grabbableObject);
         }
     }
@@ -48,6 +48,7 @@ public class GrabHandDetection : MonoBehaviour
         if (trigger.grabbableObjects.Contains(grabbableObject))
         {
             trigger.grabbableObjects.Remove(grabbableObject);
+            Debug.Log("remove");
         }
     }
 }

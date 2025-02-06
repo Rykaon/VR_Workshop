@@ -21,7 +21,7 @@ public class GrabbableTool : GrabbableObject
 
     protected override void SetCanBeGrab(bool canBeGrab)
     {
-        this.canBeGrab = canBeGrab;
+        base.SetCanBeGrab(canBeGrab);
     }
 
     public override void SetIsGrab(bool value, XRDirectInteractor interactor)
@@ -35,6 +35,16 @@ public class GrabbableTool : GrabbableObject
         {
 
         }
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+    }
+
+    protected override void InitNoGrav()
+    {
+        base.InitNoGrav();
     }
 
     public virtual void ActivateTool(bool isActive)

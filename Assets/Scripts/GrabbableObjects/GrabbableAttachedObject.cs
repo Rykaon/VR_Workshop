@@ -6,6 +6,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GrabbableAttachedObject : GrabbableObject
 {
+    public bool isDoor;
+    public bool isFirstDisk;
+    public bool isLastDisk;
     [SerializeField] protected bool isAttached;
     [SerializeField] protected bool isSnap;
     protected bool isSnapping;
@@ -17,6 +20,7 @@ public class GrabbableAttachedObject : GrabbableObject
     [SerializeField] protected Renderer rightHandRenderer;
     [SerializeField] protected Collider collision;
     [SerializeField] protected GrabbableAttachTrigger trigger;
+    [SerializeField] protected Collider triggerCollider;
     protected PlayerGrab grab;
 
     [SerializeField] protected List<Transform> movementTransform;
@@ -38,6 +42,11 @@ public class GrabbableAttachedObject : GrabbableObject
         grab = GameObject.Find("Camera Offset").GetComponent<PlayerGrab>();
         leftHandRenderer.enabled = false;
         rightHandRenderer.enabled = false;
+
+        if (isFirstDisk || isLastDisk)
+        {
+            isKinematic = true;
+        }
     }
 
     public override void SetIsGrab(bool value, XRDirectInteractor interactor)
@@ -75,6 +84,11 @@ public class GrabbableAttachedObject : GrabbableObject
         }
     }
 
+    protected override void SetCanBeGrab(bool canBeGrab)
+    {
+        base.SetCanBeGrab(canBeGrab);
+    }
+
     public virtual bool CheckDirToAttach(Vector3 DirToCheck, float acceptanceAngle)
     {
         Vector3 DirToMatch;
@@ -92,13 +106,38 @@ public class GrabbableAttachedObject : GrabbableObject
 
         if (!isAttached)
         {
-            if (!trigger.isObjectInBox)
+            if (!IsInsideCollider())
             {
                 return false;
             }
         }
 
         return angle <= acceptanceAngle;
+    }
+
+    public bool IsInsideCollider()
+    {
+        if (triggerCollider == null)
+        {
+            Debug.LogWarning("Aucun collider assigné !");
+            return false;
+        }
+
+        Vector3 center = triggerCollider.bounds.center;
+        Vector3 halfExtents = triggerCollider.bounds.extents;
+        Quaternion rotation = triggerCollider.transform.rotation;
+
+        Collider[] detectedObjects = Physics.OverlapBox(center, halfExtents, rotation);
+
+        foreach (Collider col in detectedObjects)
+        {
+            if (col.gameObject == gameObject)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public virtual void SetIsAttached()
@@ -149,11 +188,10 @@ public class GrabbableAttachedObject : GrabbableObject
         }
 
         Tween posTween = transform.DOMove(posToSnap, transitionTime);
-        //Tween rotTween = transform.DORotate(rotToSnap, transitionTime);
+        Tween rotTween = transform.DORotate(rotToSnap, transitionTime);
 
         while (transform.position != posToSnap)
         {
-            Debug.Log("aaaaaaaaaaaaaah");
             elapsedTime += Time.deltaTime;
             float newTime = transitionTime - elapsedTime;
 
@@ -171,19 +209,19 @@ public class GrabbableAttachedObject : GrabbableObject
             if (newTime > 0f)
             {
                 posTween = transform.DOMove(posToSnap, newTime);
-                //rotTween = transform.DORotate(rotToSnap, newTime);
+                rotTween = transform.DORotate(rotToSnap, newTime);
             }
             else
             {
                 transform.position = posToSnap;
                 transform.rotation = Quaternion.Euler(rotToSnap);
                 posTween.Kill();
-                //rotTween.Kill();
+                rotTween.Kill();
             }
         }
 
         posTween.Kill();
-        //rotTween.Kill();
+        rotTween.Kill();
         SetSnap();
 
         yield return null;
@@ -213,11 +251,18 @@ public class GrabbableAttachedObject : GrabbableObject
         }
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+
         if (!isSnap && !isSnapping)
         {
             StartCoroutine(SnapTo());
         }
+    }
+
+    protected override void InitNoGrav()
+    {
+        base.InitNoGrav();
     }
 }
