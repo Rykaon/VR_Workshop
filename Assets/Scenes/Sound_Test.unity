@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 278885339}
+  - component: {fileID: 278885340}
   m_Layer: 0
   m_Name: Sound Manager
   m_TagString: Untagged
@@ -154,6 +155,157 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &278885340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278885338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3724348e28a912444a1443ba7a6de23e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: sound_MondeReel
+    clip: {fileID: 8300000, guid: 57245f2ea415fdc44a736eacff627ae9, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: sound_Player_Wheels
+    clip: {fileID: 8300000, guid: 74b677d98821cb346971d94aa9516bd8, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sound_Drop
+    clip: {fileID: 8300000, guid: 3d0234b875ecae8448a173c10c59b6bf, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sound_Grab
+    clip: {fileID: 8300000, guid: 358a5647499c4f04c83d708a72fa983d, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sound_Whoosh
+    clip: {fileID: 8300000, guid: b7aef3be0651c8b4a938578c09d5612f, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sound_Cassette_Take
+    clip: {fileID: 8300000, guid: 60aef4cb5d819a5449f46765be98cf5b, type: 3}
+    volume: 0.03
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sound_Blow_Torch
+    clip: {fileID: 8300000, guid: d5aa418f80eb39540af42daf9fea5e80, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sound_Hammer_Hit_Tools
+    clip: {fileID: 8300000, guid: 907df260007a8fc4c8381551c4679802, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sound_Hammer_Hit_Air
+    clip: {fileID: 8300000, guid: b7aef3be0651c8b4a938578c09d5612f, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sound_Hammer_Hit_Materials
+    clip: {fileID: 8300000, guid: ccc499f6d22487a4085b691c34e65fd4, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sound_Hammer_Good
+    clip: {fileID: 8300000, guid: b3a013b2d16f5a24a951695ebf3a5d6c, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sound_Cassette_Put
+    clip: {fileID: 8300000, guid: f49d77936d3cbb8449276c13d735b14e, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sound_Explosion
+    clip: {fileID: 8300000, guid: 29d5a173affefbf4896c6b4bcedbfa3a, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sound_MondeVirtuel_Start
+    clip: {fileID: 8300000, guid: 2cb8a1dbd50331641a97e2bf3c7ec6a6, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sound_MondeVirtuel_Loop
+    clip: {fileID: 8300000, guid: ac95ea13788f3bf44bb3df78ec64dc63, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: sound_Win
+    clip: {fileID: 8300000, guid: 6b535ec7636368a49ba61082ae4dc9c8, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: sound_UI_Click1
+    clip: {fileID: 8300000, guid: b228b19384e3b0c49910b9b46a77aecf, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: sound_UI_Click2
+    clip: {fileID: 8300000, guid: a3096a429202be445a387f6b5ae50288, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: sound_UI_Glitch
+    clip: {fileID: 8300000, guid: 58752ce39e0b6894bbcf9a7e59c8633d, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: sound_Watch_Close
+    clip: {fileID: 8300000, guid: 5b512015962e1c5418020a56225f084a, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: sound_Watch_Open
+    clip: {fileID: 8300000, guid: d324ddd5eedc7af489bd0ca75b648354, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: sound_Menu_Start
+    clip: {fileID: 8300000, guid: 661256ee69f21a04b9daeaf24f526d58, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: sound_Level_Lock
+    clip: {fileID: 8300000, guid: 63b647cb4a617644caec919f69e894af, type: 3}
+    volume: 0.1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
 --- !u!1 &899124089
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1496627601}
   - component: {fileID: 1496627600}
+  - component: {fileID: 1496627602}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -340,6 +493,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1496627602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496627599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
