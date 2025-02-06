@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_HologramShader
+  m_Name: Shader Graphs_HologramShader 1
   m_Shader: {fileID: -6465566751694194690, guid: b4b77261fea99aa4b97b80ffd30af3a9,
     type: 3}
   m_Parent: {fileID: 0}
@@ -60,7 +60,7 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _FresnelColor: {r: 14.754423, g: 6.8874784, b: 2.0857034, a: 1}
+    - _FresnelColor: {r: 2.0857034, g: 14.128161, b: 14.754423, a: 1}
     - _ScanLineSpeed: {r: 1, g: 1, b: 0, a: 0}
     - _ScanLineTiling: {r: 1, g: 11, b: 0, a: 0}
   m_BuildTextureStacks: []
