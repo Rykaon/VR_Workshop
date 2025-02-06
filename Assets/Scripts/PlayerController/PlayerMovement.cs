@@ -11,21 +11,22 @@ public class PlayerMovement : PlayerComponent
 {
     private Vector3 velocityPlayer;
     [HideInInspector] public bool isClimbing;
-    private Rigidbody body;
+    public Rigidbody body;
     [SerializeField] private InputActionProperty leftHandVelocity;
     [SerializeField] private InputActionProperty rightHandVelocity;
     [SerializeField] private InputActionProperty turnCamera;
     [SerializeField] private float speedMultiplier;
     private string handUsed;
     public Transform playerCamera;
-    public TextMeshPro DebugText;
     private int numberOfTurn;
+
+    public bool gravity;
 
 
     
     void Start()
     {
-        body = GetComponent<Rigidbody>();
+     
         turnCamera.action.started += ctx => GetDirection(ctx.ReadValue<Vector2>());
     }
 
@@ -42,6 +43,7 @@ public class PlayerMovement : PlayerComponent
     void Update()
     {
 
+        body.useGravity = gravity;
         if (handUsed == "LeftHand")
         {
             velocityPlayer = leftHandVelocity.action.ReadValue<Vector3>();
@@ -54,9 +56,11 @@ public class PlayerMovement : PlayerComponent
 
         if (isClimbing)
         {
+            if(gravity) 
+                velocityPlayer.y = 0;
             velocityPlayer = Quaternion.AngleAxis(45*numberOfTurn, Vector3.up) * velocityPlayer;
             body.velocity = -velocityPlayer*speedMultiplier;
-            DebugText.text = (-velocityPlayer).ToString();
+            
         }
     }
 
@@ -68,7 +72,7 @@ public class PlayerMovement : PlayerComponent
             case Cardinal.North:
                 break;
             case Cardinal.South:
-                numberOfTurn += 4;
+               
                 break;
             case Cardinal.East:
                 numberOfTurn++;

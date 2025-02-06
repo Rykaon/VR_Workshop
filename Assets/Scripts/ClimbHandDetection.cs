@@ -12,17 +12,7 @@ public class ClimbHandDetection : MonoBehaviour
         grabInteractable = GetComponent<XRGrabInteractable>();
     }
 
-    void OnEnable()
-    {
-        grabInteractable.selectEntered.AddListener(OnGrab);
-        grabInteractable.selectExited.AddListener(OnRelease);
-    }
-
-    void OnDisable()
-    {
-        grabInteractable.selectEntered.RemoveListener(OnGrab);
-        grabInteractable.selectExited.RemoveListener(OnRelease);
-    }
+   
 
     public void OnGrab(SelectEnterEventArgs args)
     {
