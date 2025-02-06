@@ -173,10 +173,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   diskCache: {fileID: 1859451841}
-  active:
-  - {fileID: 2100000, guid: f4b9c2324851ab641bafa8c7f2290d24, type: 2}
-  notActive:
-  - {fileID: 2100000, guid: f24d027042a88614c899153fc5deffb1, type: 2}
   meshRenderer: {fileID: 34246397}
 --- !u!65 &34246396
 BoxCollider:
@@ -1633,10 +1629,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   diskCache: {fileID: 1859451841}
-  active:
-  - {fileID: 2100000, guid: f4b9c2324851ab641bafa8c7f2290d24, type: 2}
-  notActive:
-  - {fileID: 2100000, guid: f24d027042a88614c899153fc5deffb1, type: 2}
   meshRenderer: {fileID: 832991287}
 --- !u!65 &832991286
 BoxCollider:
@@ -2169,10 +2161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   diskCache: {fileID: 1859451841}
-  active:
-  - {fileID: 2100000, guid: f4b9c2324851ab641bafa8c7f2290d24, type: 2}
-  notActive:
-  - {fileID: 2100000, guid: f24d027042a88614c899153fc5deffb1, type: 2}
   meshRenderer: {fileID: 1242678133}
 --- !u!65 &1242678132
 BoxCollider:
@@ -3866,10 +3854,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   diskCache: {fileID: 1859451841}
-  active:
-  - {fileID: 2100000, guid: f4b9c2324851ab641bafa8c7f2290d24, type: 2}
-  notActive:
-  - {fileID: 2100000, guid: f24d027042a88614c899153fc5deffb1, type: 2}
   meshRenderer: {fileID: 1969766312}
 --- !u!65 &1969766311
 BoxCollider:

@@ -426,8 +426,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   diskCache: {fileID: 1587972489627151173}
-  active: []
-  notActive: []
   meshRenderer: {fileID: 0}
 --- !u!4 &8973568202006019138 stripped
 Transform:
@@ -916,8 +914,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   diskCache: {fileID: 1587972489627151173}
-  active: []
-  notActive: []
   meshRenderer: {fileID: 0}
 --- !u!4 &4486937473592315138 stripped
 Transform:
@@ -1043,8 +1039,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   diskCache: {fileID: 1587972489627151173}
-  active: []
-  notActive: []
   meshRenderer: {fileID: 0}
 --- !u!4 &3540427457316646147 stripped
 Transform:
@@ -1170,8 +1164,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   diskCache: {fileID: 1587972489627151173}
-  active: []
-  notActive: []
   meshRenderer: {fileID: 0}
 --- !u!4 &1464630879356982802 stripped
 Transform:
@@ -1247,7 +1239,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3089021961702512291, guid: 34e8cc651b64d7340b94b95612626a8a, type: 3}
+    - {fileID: 4536069349280792119, guid: 34e8cc651b64d7340b94b95612626a8a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

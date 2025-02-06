@@ -7,14 +7,12 @@ public class DiskCacheAttach : MonoBehaviour
 {
     [SerializeField] public bool isActive;
     [SerializeField] DiskCache diskCache;
-    [SerializeField] List<Material> active;
-    [SerializeField] List<Material> notActive;
     [SerializeField] MeshRenderer meshRenderer;
     bool canBeActivated = true;
 
     private void Start()
     {
-        //SetActive(true);
+
     }
 
     public void SetActive(bool isActive)
@@ -37,11 +35,11 @@ public class DiskCacheAttach : MonoBehaviour
 
         if (isActive)
         {
-            meshRenderer.SetMaterials(active);
+
         }
         else
         {
-            meshRenderer.SetMaterials(notActive);
+
         }
 
         canBeActivated = true;

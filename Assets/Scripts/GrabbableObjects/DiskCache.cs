@@ -85,7 +85,7 @@ public class DiskCache : GrabbableObject
     {
         base.InitializeObject();
 
-        //canBeGrab = false;
+        canBeGrab = false;
         collision.isTrigger = true;
         trigger.isDiskCache = true;
     }
