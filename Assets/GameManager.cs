@@ -5,7 +5,6 @@ using UnityEngine;
 public struct DiskStatus
 {
     public List<GrabbableAttachedObject> disk;
-
     public bool locked;//Verrouilée (Retirable de la borne d'arcade ou non)
     public bool welded;//Soudée (Si la disquette à sa plaque ou non)
     public bool repaired;//Réparée (Les puces de la cassettes sont toutes réparées)
@@ -15,7 +14,8 @@ public struct DiskStatus
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
-
+    public bool secondPhase = false;
+    public PlayerMovement playerMovement;
     void Awake()
     {
         if (instance != null && instance != this)
@@ -76,19 +76,21 @@ public class GameManager : MonoBehaviour
 
     public void LaunchFirstPhase()
     {
-        //SFX petits éclairs
-        //FX petits éclairs
-
-        //Musique monde réel
+      
     }
 
     public void LaunchSecondPhase()
     {
-        //SFX Level Up
-        //FX Puissant éclair
+        if (!secondPhase)
+        {
+            Debug.Log("oui");
+            secondPhase = true;
+            playerMovement.gravity = false;
+            //SFX Level Up
+            //FX Puissant éclair
 
-        //Changer la gravité
-        Physics.gravity = Vector3.zero;
+            //Changer la gravité
+        }
     }
 
     void Update()

@@ -173,6 +173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  angleAccpetance: 0
+  distanceAccpetance: 0
+  velocityTreshold: 0
 --- !u!114 &108773690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,6 +1027,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9dfd57a2dae6a48a6f5812ce863929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondPhase: 0
+  playerMovement: {fileID: 108773690}
   currentState: 0
   checkDiskStatus: {fileID: 941217747}
 --- !u!4 &941217749
