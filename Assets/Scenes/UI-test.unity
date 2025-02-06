@@ -218,10 +218,10 @@ MonoBehaviour:
   turnCamera:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Turn Camera
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: dfae290d-c9ca-415f-8e1f-3e83ea21766a
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1467,6 +1467,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1872621017}
+  - {fileID: 1970940497}
   m_Father: {fileID: 108773688}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1642587847
@@ -1971,14 +1972,14 @@ Transform:
   m_GameObject: {fileID: 1970940493}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9895887, z: -0, w: -0.14392443}
-  m_LocalPosition: {x: -0.0497, y: 1.1063, z: -1.7882}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: -0.0497, y: -0.011299968, z: -0.111199975}
+  m_LocalScale: {x: 0.049999997, y: 0.05, z: 0.049999997}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1193729111}
   - {fileID: 355523319}
   - {fileID: 2021198302}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1642587842}
   m_LocalEulerAnglesHint: {x: 0, y: 196.55, z: 0}
 --- !u!114 &1970940498
 MonoBehaviour:
@@ -2007,7 +2008,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
+    m_Reference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
 --- !u!1001 &2021198300
 PrefabInstance:
@@ -2465,6 +2466,5 @@ SceneRoots:
   - {fileID: 554874707}
   - {fileID: 317806286}
   - {fileID: 1372275666}
-  - {fileID: 1970940497}
   - {fileID: 1856404565}
   - {fileID: 1019666526}
