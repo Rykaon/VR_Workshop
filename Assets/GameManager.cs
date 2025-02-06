@@ -31,21 +31,22 @@ public class GameManager : MonoBehaviour
         SecondPhase,//Deuxieme phase de gameplay, se termine lorsque la deuxieme cassette est réparée et est mise dans la borne d'arcade
         EndGame//Fin du jeu
     }
-    GameState currentState;
+    public GameState currentState;
 
     void Start()
     {
         //Début du jeu
         currentState = GameState.Initialization;
-        Initialization();
+        DiskInitialization();
     }
 
     public DiskStatus firstDisk;
     public DiskStatus secondDisk;
+    public DiskStatus[] allDiskInScene;
 
     public DiskStatusChecker checkDiskStatus;
 
-    public void Initialization()
+    public void DiskInitialization()
     {
         currentState = GameState.FirstPhase;
 
@@ -60,11 +61,34 @@ public class GameManager : MonoBehaviour
         secondDisk.welded = true;
         secondDisk.repaired = false;
         secondDisk.installed = true;
+
+        //Pour toutes les cassettes qui sont en rab (afin d'éviter le soft lock)
+        for (int i =0; i< allDiskInScene.Length; i++)
+        {
+            allDiskInScene[i].locked = false;
+            allDiskInScene[i].welded = true;
+            allDiskInScene[i].repaired = false;
+            allDiskInScene[i].installed = false;
+        }
+
+        Debug.Log("Initialisé");
+    }
+
+    public void LaunchFirstPhase()
+    {
+        //SFX petits éclairs
+        //FX petits éclairs
+
+        //Musique monde réel
     }
 
     public void LaunchSecondPhase()
     {
-        //Changer la gravité et tout le bordel qui va avec
+        //SFX Level Up
+        //FX Puissant éclair
+
+        //Changer la gravité
+        Physics.gravity = Vector3.zero;
     }
 
     void Update()

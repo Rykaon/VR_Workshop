@@ -30,6 +30,18 @@ public class DiskStatusChecker : MonoBehaviour
         diskToTest.welded = false;
     }
 
+    public bool DiskCanBeRepaired(DiskStatus diskToTest)
+    {
+        if (diskToTest.welded == false)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void RepairDisk(DiskStatus diskToTest)
     {
         diskToTest.repaired = true;
