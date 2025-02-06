@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
     {
         if (!secondPhase)
         {
-            Debug.Log("oui");
+            
             secondPhase = true;
             playerMovement.gravity = false;
             StartNoGrav?.Invoke() ;
