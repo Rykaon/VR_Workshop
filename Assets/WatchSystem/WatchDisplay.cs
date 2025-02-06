@@ -19,7 +19,7 @@ public class WatchDisplay : MonoBehaviour
 
     private void SelectActiveDisk()
     {
-        if(GameManager.instance.firstDisk.locked == false)
+        if(!GameManager.instance.firstDisk.locked)
         {
             activeDisk = GameManager.instance.firstDisk;
         }
@@ -29,25 +29,59 @@ public class WatchDisplay : MonoBehaviour
         }
     }
 
-    private void ObjectToDisplay()
+    private void DisplayObject()
     {
        if((activeDisk.installed && !activeDisk.repaired) || (!activeDisk.installed && activeDisk.repaired && activeDisk.welded))
         {
             //On matérialise la borne d'arcade sur la montre
+            hammer.SetActive(false);
+            welder.SetActive(false);
+            arcade.SetActive(true);
         }
        else if (!activeDisk.installed && !activeDisk.welded && !activeDisk.repaired)
         {
             //On matérialise le marteau
+            welder.SetActive(false);
+            arcade.SetActive(false);
+            hammer.SetActive(true);
         }
        else if ((!activeDisk.installed && activeDisk.welded && !activeDisk.repaired) || (!activeDisk.installed && !activeDisk.welded && activeDisk.repaired))
         {
             //On matérialise le chalumeau
+            hammer.SetActive(false);
+            arcade.SetActive(false);
+            welder.SetActive(true);
+        }
+       else if(activeDisk.installed && activeDisk.welded && activeDisk.repaired)
+        {
+            activeDisk.locked = true;
+            SelectActiveDisk();
+        }
+       else
+        {
+            //On a pas d'objectifs.
+            hammer.SetActive(false);
+            arcade.SetActive(false);
+            welder.SetActive(false);
         }
     }
 
+    private void DisplayOff()
+    {
+        hammer.SetActive(false);
+        arcade.SetActive(false);
+        welder.SetActive(false);
+    }
 
     private void Update()
     {
-
+        if(WatchIsOn)
+        {
+            DisplayObject();
+        }
+        else
+        {
+            DisplayOff();
+        }
     }
 }
