@@ -12,6 +12,8 @@ public class PlayerGrab : PlayerComponent
     [SerializeField] float angleAccpetance;
     [SerializeField] float distanceAccpetance;
     [SerializeField] float velocityTreshold;
+    [SerializeField] public MeshRenderer leftRenderer;
+    [SerializeField] public MeshRenderer rightRenderer;
 
     bool isLeftHandMoving;
     bool isRightHandMoving;
@@ -133,7 +135,7 @@ public class PlayerGrab : PlayerComponent
 
             if (leftVelocity.magnitude > velocityTreshold)
             {
-                Debug.Log("LeftHand : " + leftVelocity.magnitude);
+                //Debug.Log("LeftHand : " + leftVelocity.magnitude);
                 SetHandIsMoving(true, true);
                 leftHandDistance = Mathf.Abs(Vector3.Distance(previousLeftHandPosition, leftPosition));
 
@@ -146,7 +148,7 @@ public class PlayerGrab : PlayerComponent
                     if (leftAttachedObject != null)
                     {
                         bool isDirCheck = leftAttachedObject.CheckDirToAttach(leftHandDirection, angleAccpetance);
-
+                        Debug.Log("LeftHand : " + isDirCheck);
                         if (isDirCheck)
                         {
                             leftAttachedObject.SetIsAttached();
@@ -173,7 +175,7 @@ public class PlayerGrab : PlayerComponent
 
             if (leftVelocity.magnitude > velocityTreshold)
             {
-                Debug.Log("RightHand : " + leftVelocity.magnitude);
+                //Debug.Log("RightHand : " + leftVelocity.magnitude);
                 SetHandIsMoving(true, false);
                 rightHandDistance = Mathf.Abs(Vector3.Distance(previousRightHandPosition, rightPosition));
 
@@ -186,7 +188,7 @@ public class PlayerGrab : PlayerComponent
                     if (rightAttachedObject != null)
                     {
                         bool isDirCheck = rightAttachedObject.CheckDirToAttach(rightHandDirection, angleAccpetance);
-
+                        Debug.Log("RightHand : " + isDirCheck);
                         if (isDirCheck)
                         {
                             rightAttachedObject.SetIsAttached();
