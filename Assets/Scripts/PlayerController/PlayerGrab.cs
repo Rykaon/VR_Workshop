@@ -7,7 +7,18 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PlayerGrab : PlayerComponent
 {
     bool isGrabbing = false;
-    GrabbableObject grabObject;
+    GrabbableObject leftGrabObject;
+    GrabbableObject righttGrabObject;
+    [SerializeField] float angleAccpetance;
+    [SerializeField] float distanceAccpetance;
+    [SerializeField] float velocityTreshold;
+
+    bool isLeftHandMoving;
+    bool isRightHandMoving;
+    float leftHandDistance;
+    float rightHandDistance;
+    Vector3 previousLeftHandPosition;
+    Vector3 previousRightHandPosition;
 
     public override void InitializeComponent(PlayerController controller)
     {
@@ -22,7 +33,7 @@ public class PlayerGrab : PlayerComponent
         {
             return;
         }
-        else if (value && grabObject != null)
+        else if (value && leftGrabObject != null)
         {
             return;
         }
@@ -48,18 +59,63 @@ public class PlayerGrab : PlayerComponent
 
                 if (grab != null)
                 {
-                    grabObject = grab;
-                    hand.AttachGrabbableObject(grabObject, interactor);
+                    if (hand == controller.leftTrigger)
+                    {
+                        leftGrabObject = grab;
+                    }
+                    else
+                    {
+                        righttGrabObject = grab;
+                    }
+                    
+                    hand.AttachGrabbableObject(grab, interactor);
                 }
             }
             else
             {
-                if (grabObject != null)
+                if (hand == controller.leftTrigger)
                 {
-                    hand.DettachGrabbableObject(grabObject);
-                    grabObject = null;
+                    if (leftGrabObject != null)
+                    {
+                        hand.DettachGrabbableObject(leftGrabObject);
+                        leftGrabObject = null;
+                    }
                 }
+                else
+                {
+                    if (righttGrabObject != null)
+                    {
+                        hand.DettachGrabbableObject(righttGrabObject);
+                        righttGrabObject = null;
+                    }
+                }
+
+                
             }
+        }
+    }
+
+    private void SetHandIsMoving(bool value, bool isLeft)
+    {
+        if (isLeft)
+        {
+            if (value && !isLeftHandMoving)
+            {
+                previousLeftHandPosition = controller.inputAction.FindActionMap("XRI LeftHand").FindAction("Position").ReadValue<Vector3>();
+                leftHandDistance = 0;
+            }
+            
+            isLeftHandMoving = value;
+        }
+        else
+        {
+            if (value && !isRightHandMoving)
+            {
+                previousRightHandPosition = controller.inputAction.FindActionMap("XRI RightHand").FindAction("Position").ReadValue<Vector3>();
+                rightHandDistance = 0;
+            }
+            
+            isRightHandMoving = value;
         }
     }
 
@@ -71,6 +127,37 @@ public class PlayerGrab : PlayerComponent
         if (leftGripValue > 0)
         {
             SetGrip(controller.leftTrigger, true);
+
+            Vector3 leftPosition = controller.inputAction.FindActionMap("XRI LeftHand").FindAction("Position").ReadValue<Vector3>();
+            Vector3 leftVelocity = controller.inputAction.FindActionMap("XRI LeftHand").FindAction("Velocity").ReadValue<Vector3>();
+
+            if (leftVelocity.magnitude > velocityTreshold)
+            {
+                Debug.Log("LeftHand : " + leftVelocity.magnitude);
+                SetHandIsMoving(true, true);
+                leftHandDistance = Mathf.Abs(Vector3.Distance(previousLeftHandPosition, leftPosition));
+
+                if (leftHandDistance >= distanceAccpetance)
+                {
+                    Vector3 leftHandDirection = (leftPosition - previousLeftHandPosition).normalized;
+
+                    GrabbableAttachedObject leftAttachedObject = leftGrabObject as GrabbableAttachedObject;
+                    
+                    if (leftAttachedObject != null)
+                    {
+                        bool isDirCheck = leftAttachedObject.CheckDirToAttach(leftHandDirection, angleAccpetance);
+
+                        if (isDirCheck)
+                        {
+                            leftAttachedObject.SetIsAttached();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                SetHandIsMoving(false, true);
+            }
         }
         else
         {
@@ -80,6 +167,37 @@ public class PlayerGrab : PlayerComponent
         if (rightGripValue > 0)
         {
             SetGrip(controller.rightTrigger, true);
+
+            Vector3 rightPosition = controller.inputAction.FindActionMap("XRI RightHand").FindAction("Position").ReadValue<Vector3>();
+            Vector3 leftVelocity = controller.inputAction.FindActionMap("XRI RightHand").FindAction("Velocity").ReadValue<Vector3>();
+
+            if (leftVelocity.magnitude > velocityTreshold)
+            {
+                Debug.Log("RightHand : " + leftVelocity.magnitude);
+                SetHandIsMoving(true, false);
+                rightHandDistance = Mathf.Abs(Vector3.Distance(previousRightHandPosition, rightPosition));
+
+                if (rightHandDistance >= distanceAccpetance)
+                {
+                    Vector3 rightHandDirection = (rightPosition - previousRightHandPosition).normalized;
+
+                    GrabbableAttachedObject rightAttachedObject = righttGrabObject as GrabbableAttachedObject;
+
+                    if (rightAttachedObject != null)
+                    {
+                        bool isDirCheck = rightAttachedObject.CheckDirToAttach(rightHandDirection, angleAccpetance);
+
+                        if (isDirCheck)
+                        {
+                            rightAttachedObject.SetIsAttached();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                SetHandIsMoving(false, false);
+            }
         }
         else
         {
