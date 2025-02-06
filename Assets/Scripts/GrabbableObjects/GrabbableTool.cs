@@ -6,6 +6,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GrabbableTool : GrabbableObject
 {
+    [SerializeField] bool isBlowTorch;
+    [SerializeField] BlowTorchTrigger trigger;
+
     void Start()
     {
         InitializeObject();
@@ -31,6 +34,25 @@ public class GrabbableTool : GrabbableObject
         if (isGrab)
         {
 
+        }
+    }
+
+    public virtual void ActivateTool(bool isActive)
+    {
+        if (isBlowTorch)
+        {
+            if (isActive)
+            {
+                Debug.Log(isActive);
+                if (trigger.diskCacheAttach != null)
+                {
+                    trigger.diskCacheAttach.SetActive(!trigger.diskCacheAttach.isActive);
+                }
+            }
+            else
+            {
+
+            }
         }
     }
 }

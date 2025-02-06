@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class GrabbableAttachTrigger : MonoBehaviour
 {
-    [SerializeField] GrabbableAttachedObject objectToCheck;
+    [SerializeField] GrabbableObject objectToCheck;
     public bool isObjectInBox;
+    public bool isDiskCache = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out GrabbableAttachedObject grab))
+        if (other.TryGetComponent(out GrabbableObject grab))
         {
             if (grab != null)
             {
                 if (grab == objectToCheck)
                 {
                     isObjectInBox = true;
+
+                    if (isDiskCache && !grab.isGrab)
+                    {
+                        DiskCache diskCache = grab as DiskCache;
+                        diskCache.Snap();
+                    }
                 }
             }
         }
@@ -23,7 +30,7 @@ public class GrabbableAttachTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent(out GrabbableAttachedObject grab))
+        if (other.TryGetComponent(out GrabbableObject grab))
         {
             if (grab != null)
             {

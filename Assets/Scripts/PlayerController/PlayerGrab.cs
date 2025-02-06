@@ -8,7 +8,9 @@ public class PlayerGrab : PlayerComponent
 {
     bool isGrabbing = false;
     GrabbableObject leftGrabObject;
-    GrabbableObject righttGrabObject;
+    GrabbableObject rightGrabObject;
+    GrabbableTool leftTool;
+    GrabbableTool rightTool;
     [SerializeField] float angleAccpetance;
     [SerializeField] float distanceAccpetance;
     [SerializeField] float velocityTreshold;
@@ -67,7 +69,7 @@ public class PlayerGrab : PlayerComponent
                     }
                     else
                     {
-                        righttGrabObject = grab;
+                        rightGrabObject = grab;
                     }
                     
                     hand.AttachGrabbableObject(grab, interactor);
@@ -81,14 +83,16 @@ public class PlayerGrab : PlayerComponent
                     {
                         hand.DettachGrabbableObject(leftGrabObject);
                         leftGrabObject = null;
+                        leftTool = null;
                     }
                 }
                 else
                 {
-                    if (righttGrabObject != null)
+                    if (rightGrabObject != null)
                     {
-                        hand.DettachGrabbableObject(righttGrabObject);
-                        righttGrabObject = null;
+                        hand.DettachGrabbableObject(rightGrabObject);
+                        rightGrabObject = null;
+                        rightTool = null;
                     }
                 }
 
@@ -135,7 +139,6 @@ public class PlayerGrab : PlayerComponent
 
             if (leftVelocity.magnitude > velocityTreshold)
             {
-                //Debug.Log("LeftHand : " + leftVelocity.magnitude);
                 SetHandIsMoving(true, true);
                 leftHandDistance = Mathf.Abs(Vector3.Distance(previousLeftHandPosition, leftPosition));
 
@@ -148,7 +151,7 @@ public class PlayerGrab : PlayerComponent
                     if (leftAttachedObject != null)
                     {
                         bool isDirCheck = leftAttachedObject.CheckDirToAttach(leftHandDirection, angleAccpetance);
-                        Debug.Log("LeftHand : " + isDirCheck);
+
                         if (isDirCheck)
                         {
                             leftAttachedObject.SetIsAttached();
@@ -175,7 +178,6 @@ public class PlayerGrab : PlayerComponent
 
             if (leftVelocity.magnitude > velocityTreshold)
             {
-                //Debug.Log("RightHand : " + leftVelocity.magnitude);
                 SetHandIsMoving(true, false);
                 rightHandDistance = Mathf.Abs(Vector3.Distance(previousRightHandPosition, rightPosition));
 
@@ -183,12 +185,12 @@ public class PlayerGrab : PlayerComponent
                 {
                     Vector3 rightHandDirection = (rightPosition - previousRightHandPosition).normalized;
 
-                    GrabbableAttachedObject rightAttachedObject = righttGrabObject as GrabbableAttachedObject;
+                    GrabbableAttachedObject rightAttachedObject = rightGrabObject as GrabbableAttachedObject;
 
                     if (rightAttachedObject != null)
                     {
                         bool isDirCheck = rightAttachedObject.CheckDirToAttach(rightHandDirection, angleAccpetance);
-                        Debug.Log("RightHand : " + isDirCheck);
+                        
                         if (isDirCheck)
                         {
                             rightAttachedObject.SetIsAttached();
@@ -204,6 +206,63 @@ public class PlayerGrab : PlayerComponent
         else
         {
             SetGrip(controller.rightTrigger, false);
+        }
+
+        float leftTriggerValue = controller.inputAction.FindActionMap("XRI LeftHand interaction").FindAction("Activate Value").ReadValue<float>();
+        float rightTriggerValue = controller.inputAction.FindActionMap("XRI RightHand interaction").FindAction("Activate Value").ReadValue<float>();
+
+        if (leftTriggerValue > 0f)
+        {
+            if (leftGrabObject != null)
+            {
+                if (leftTool == null)
+                {
+                    leftTool = leftGrabObject as GrabbableTool;
+
+                    if (leftTool != null)
+                    {
+                        leftTool.ActivateTool(true);
+                    }
+                }
+                else
+                {
+                    leftTool.ActivateTool(true);
+                }
+            }
+        }
+        else
+        {
+            if (leftTool != null)
+            {
+                leftTool.ActivateTool(false);
+            }
+        }
+
+        if (rightTriggerValue > 0f)
+        {
+            if (rightGrabObject != null)
+            {
+                if (rightTool == null)
+                {
+                    rightTool = rightGrabObject as GrabbableTool;
+
+                    if (rightTool != null)
+                    {
+                        rightTool.ActivateTool(true);
+                    }
+                }
+                else
+                {
+                    rightTool.ActivateTool(true);
+                }
+            }
+        }
+        else
+        {
+            if (rightTool != null)
+            {
+                rightTool.ActivateTool(false);
+            }
         }
     }
 

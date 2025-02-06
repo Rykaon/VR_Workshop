@@ -55,10 +55,12 @@ public class GrabbableAttachedObject : GrabbableObject
                     if (interactor == grab.controller.leftInteractor)
                     {
                         //grab.leftRenderer.enabled = false;
+                        leftHandRenderer.enabled = true;
                     }
                     else
                     {
                         //grab.rightRenderer.enabled = false;
+                        rightHandRenderer.enabled = true;
                     }
                 }
             }
@@ -66,6 +68,8 @@ public class GrabbableAttachedObject : GrabbableObject
             {
                 //grab.leftRenderer.enabled = true;
                 //grab.rightRenderer.enabled = true;
+                leftHandRenderer.enabled = false;
+                rightHandRenderer.enabled = false;
                 this.interactor = null;
             }
         }
@@ -112,14 +116,6 @@ public class GrabbableAttachedObject : GrabbableObject
                 needToBeAttached = true;
             }
 
-            if (interactor == grab.controller.leftInteractor)
-            {
-                leftHandRenderer.enabled = true;
-            }
-            else
-            {
-                rightHandRenderer.enabled = true;
-            }
 
             isSnap = false;
             isSnapping = false;
@@ -153,7 +149,7 @@ public class GrabbableAttachedObject : GrabbableObject
         }
 
         Tween posTween = transform.DOMove(posToSnap, transitionTime);
-        Tween rotTween = transform.DORotate(rotToSnap, transitionTime);
+        //Tween rotTween = transform.DORotate(rotToSnap, transitionTime);
 
         while (transform.position != posToSnap)
         {
@@ -175,19 +171,19 @@ public class GrabbableAttachedObject : GrabbableObject
             if (newTime > 0f)
             {
                 posTween = transform.DOMove(posToSnap, newTime);
-                rotTween = transform.DORotate(rotToSnap, newTime);
+                //rotTween = transform.DORotate(rotToSnap, newTime);
             }
             else
             {
                 transform.position = posToSnap;
                 transform.rotation = Quaternion.Euler(rotToSnap);
                 posTween.Kill();
-                rotTween.Kill();
+                //rotTween.Kill();
             }
         }
 
         posTween.Kill();
-        rotTween.Kill();
+        //rotTween.Kill();
         SetSnap();
 
         yield return null;
@@ -210,7 +206,7 @@ public class GrabbableAttachedObject : GrabbableObject
         else
         {
             isAttached = false;
-            collision.isTrigger = true;
+            collision.isTrigger = false;
             body.isKinematic = false;
             body.useGravity = true;
             SetCanBeGrab(true);

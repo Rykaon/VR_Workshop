@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        movement.InitializeComponent(this);
+        //movement.InitializeComponent(this);
         grab.InitializeComponent(this);
 
         inputAction = transform.parent.GetComponent<InputActionManager>().actionAssets[0];
