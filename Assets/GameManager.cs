@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public struct DiskStatus
 {
     public List<GrabbableAttachedObject> disk;
@@ -13,6 +13,7 @@ public struct DiskStatus
 
 public class GameManager : MonoBehaviour
 {
+    public static event Action StartNoGrav;
     public static GameManager instance { get; private set; }
     public bool secondPhase = false;
     public PlayerMovement playerMovement;
