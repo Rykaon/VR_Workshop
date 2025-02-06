@@ -17,6 +17,7 @@ public class GrabbableObject : MonoBehaviour
     void Start()
     {
         InitializeObject();
+        GameManager.StartNoGrav += InitNoGrav;
     }
 
     protected virtual void InitializeObject()
@@ -79,5 +80,10 @@ public class GrabbableObject : MonoBehaviour
         {
             SetCanBeGrab(!canBeGrab);
         }*/
+    }
+
+    private void InitNoGrav()
+    {
+        GetComponent<Rigidbody>().useGravity = false;
     }
 }

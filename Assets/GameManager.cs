@@ -87,6 +87,8 @@ public class GameManager : MonoBehaviour
             Debug.Log("oui");
             secondPhase = true;
             playerMovement.gravity = false;
+            StartNoGrav?.Invoke() ;
+
             //SFX Level Up
             //FX Puissant éclair
 
