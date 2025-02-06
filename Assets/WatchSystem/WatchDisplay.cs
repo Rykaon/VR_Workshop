@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WatchDisplay : MonoBehaviour
 {
@@ -12,8 +13,12 @@ public class WatchDisplay : MonoBehaviour
 
     private DiskStatus activeDisk;
 
+    public InputActionProperty button; 
+
     public void Start()
     {
+        button.action.started += ctx => WatchIsOn = !WatchIsOn;
+
         SelectActiveDisk();
     }
 

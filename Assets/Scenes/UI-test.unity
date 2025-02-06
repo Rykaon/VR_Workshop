@@ -442,7 +442,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e2fa33b40c8c7ae44b99bfebe65f7517,
         type: 3}
       propertyPath: m_Name
-      value: HammerLogo
+      value: HammerHologram
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e2fa33b40c8c7ae44b99bfebe65f7517,
         type: 3}
@@ -647,6 +647,109 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &645023151
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1970940497}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.013
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.326
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.053
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0940731
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.06985275
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.63511336
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7634801
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -79.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 162.63
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b459797307aa2bb4fa6e69d72632fd04, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: b459797307aa2bb4fa6e69d72632fd04, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: b459797307aa2bb4fa6e69d72632fd04, type: 2}
+    - target: {fileID: 919132149155446097, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_Name
+      value: WelderHologram
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2072f1bf0c6ba5b489f42f5076295334,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2072f1bf0c6ba5b489f42f5076295334, type: 3}
 --- !u!1 &658788182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,6 +1118,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
     type: 3}
   m_PrefabInstance: {fileID: 1495765169}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1019666523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1019666526}
+  - component: {fileID: 1019666525}
+  - component: {fileID: 1019666524}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1019666524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019666523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fbb629d8fb9aa4bba7881cdea98b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1019666525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019666523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9dfd57a2dae6a48a6f5812ce863929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  checkDiskStatus: {fileID: 1019666524}
+--- !u!4 &1019666526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019666523}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.04108671, y: 1.1148008, z: -1.6769035}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1193729108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2072f1bf0c6ba5b489f42f5076295334,
+    type: 3}
+  m_PrefabInstance: {fileID: 645023151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1193729111 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2072f1bf0c6ba5b489f42f5076295334,
+    type: 3}
+  m_PrefabInstance: {fileID: 645023151}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1372275662
 GameObject:
@@ -1801,6 +1975,7 @@ Transform:
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1193729111}
   - {fileID: 355523319}
   - {fileID: 2021198302}
   m_Father: {fileID: 0}
@@ -1819,8 +1994,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WatchIsOn: 0
   hammer: {fileID: 554331537}
-  welder: {fileID: 0}
+  welder: {fileID: 1193729108}
   arcade: {fileID: 2021198301}
+  button:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 9384784c-39e2-4bb9-80cf-4e4fa4619371
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1001 &2021198300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1902,7 +2090,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
         type: 3}
       propertyPath: m_Name
-      value: TerminalLogo
+      value: TerminalHologram
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
         type: 3}
@@ -2279,3 +2467,4 @@ SceneRoots:
   - {fileID: 1372275666}
   - {fileID: 1970940497}
   - {fileID: 1856404565}
+  - {fileID: 1019666526}
