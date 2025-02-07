@@ -32,7 +32,7 @@ public class DiskCacheAttach : MonoBehaviour
         this.isActive = isActive;
         diskCache.Attach();
         Debug.Log("caca");
-
+        meshRenderer.enabled = !isActive;
         if (isActive)
         {
 
