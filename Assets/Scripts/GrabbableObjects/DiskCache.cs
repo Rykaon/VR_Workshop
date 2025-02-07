@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class DiskCache : GrabbableObject
 {
+    [SerializeField] public GrabbableAttachedObject disk;
     public bool isSnap = true;
     [SerializeField] public GrabbableAttachTrigger trigger;
     [SerializeField] public List<DiskCacheAttach> diskCacheAttaches;
@@ -45,12 +46,39 @@ public class DiskCache : GrabbableObject
         if (canBeGrab)
         {
             bool canBeAttach = false;
+            bool isFullyAttach = true;
 
             foreach (DiskCacheAttach item in diskCacheAttaches)
             {
                 if (item.isActive)
                 {
                     canBeAttach = true;
+                }
+                else
+                {
+                    isFullyAttach = false;
+                }
+            }
+
+            if (isFullyAttach)
+            {
+                if (disk == GameManager.instance.firstDisk.disk)
+                {
+                    GameManager.instance.checkDiskStatus.WeldDisk(GameManager.instance.firstDisk);
+                }
+                else if (disk = GameManager.instance.secondDisk.disk)
+                {
+                    GameManager.instance.checkDiskStatus.WeldDisk(GameManager.instance.secondDisk);
+                }
+                else
+                {
+                    for (int i = 0; i < GameManager.instance.allDiskInScene.Length; i++)
+                    {
+                        if (disk == GameManager.instance.allDiskInScene[i].disk)
+                        {
+                            GameManager.instance.checkDiskStatus.WeldDisk(GameManager.instance.allDiskInScene[i]);
+                        }
+                    }
                 }
             }
 
@@ -90,6 +118,7 @@ public class DiskCache : GrabbableObject
             collision.isTrigger = true;
             trigger.isDiskCache = true;
             trigger.diskCacheAttaches = diskCacheAttaches;
+            trigger.diskToAttach = disk;
         }
 
         if (!canBeGrab)
@@ -140,6 +169,25 @@ public class DiskCache : GrabbableObject
             {
                 body = gameObject.AddComponent<Rigidbody>();
                 body.AddForce((Vector3.up + new Vector3(Random.value, 0, Random.value)) * 15f, ForceMode.Impulse);
+
+                if (disk == GameManager.instance.firstDisk.disk)
+                {
+                    GameManager.instance.checkDiskStatus.UnweldDisk(GameManager.instance.firstDisk);
+                }
+                else if (disk = GameManager.instance.secondDisk.disk)
+                {
+                    GameManager.instance.checkDiskStatus.UnweldDisk(GameManager.instance.secondDisk);
+                }
+                else
+                {
+                    for (int i = 0; i < GameManager.instance.allDiskInScene.Length; i++)
+                    {
+                        if (disk == GameManager.instance.allDiskInScene[i].disk)
+                        {
+                            GameManager.instance.checkDiskStatus.UnweldDisk(GameManager.instance.allDiskInScene[i]);
+                        }
+                    }
+                }
             }
 
             if (isGrab)

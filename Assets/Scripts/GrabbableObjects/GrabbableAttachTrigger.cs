@@ -6,6 +6,7 @@ public class GrabbableAttachTrigger : MonoBehaviour
 {
     [SerializeField] public GrabbableObject objectToCheck;
     [SerializeField] public List<DiskCacheAttach> diskCacheAttaches;
+    [SerializeField] public GrabbableAttachedObject diskToAttach;
     public bool isObjectInBox;
     public bool isDiskCache = false;
 
@@ -38,6 +39,7 @@ public class GrabbableAttachTrigger : MonoBehaviour
                         objectToCheck = diskCache;
                         diskCache.trigger = this;
                         diskCache.diskCacheAttaches = diskCacheAttaches;
+                        diskCache.disk = diskToAttach;
 
                         foreach(DiskCacheAttach attach in diskCache.diskCacheAttaches)
                         {

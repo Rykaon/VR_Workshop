@@ -36,7 +36,11 @@ public class PlayerController : MonoBehaviour
         inputAction = transform.parent.GetComponent<InputActionManager>().actionAssets[0];
 
         Physics.IgnoreLayerCollision(3, 6);
-        Physics.IgnoreLayerCollision(6, 7);
+        Physics.IgnoreLayerCollision(3, 7);
+        Physics.IgnoreLayerCollision(3, 8);
+        Physics.IgnoreLayerCollision(3, 9);
+        Physics.IgnoreLayerCollision(7, 8);
+        Physics.IgnoreLayerCollision(8, 9);
     }
 
     void Update()

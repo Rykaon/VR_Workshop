@@ -4,10 +4,12 @@ using UnityEngine;
 using System;
 public struct DiskStatus
 {
-    public List<GrabbableAttachedObject> disk;
+    public GrabbableAttachedObject disk;
     public bool locked;//Verrouilée (Retirable de la borne d'arcade ou non)
     public bool welded;//Soudée (Si la disquette à sa plaque ou non)
     public bool repaired;//Réparée (Les puces de la cassettes sont toutes réparées)
+    public int nbrPuceRepaired;
+    public int nbrPuceToRepaired;
     public bool installed;//Instalée (Si la disquette est sur la borne d'arcade ou non)
 }
 
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
     public bool secondPhase = false;
     public PlayerMovement playerMovement;
+    public List<GrabbableAttachedObject> disks;
     void Awake()
     {
         if (instance != null && instance != this)
@@ -38,7 +41,7 @@ public class GameManager : MonoBehaviour
     {
         //Début du jeu
         currentState = GameState.Initialization;
-        DiskInitialization();
+        DiskInitialization(disks[0], disks[1]);
     }
 
     public DiskStatus firstDisk;
@@ -47,20 +50,24 @@ public class GameManager : MonoBehaviour
 
     public DiskStatusChecker checkDiskStatus;
 
-    public void DiskInitialization()
+    public void DiskInitialization(GrabbableAttachedObject firstDiskObject, GrabbableAttachedObject secondDiskObject)
     {
         currentState = GameState.FirstPhase;
 
-        //firstDisk.disk = 
-        firstDisk.locked = false;
+        firstDisk.disk = firstDiskObject;
+        firstDisk.locked = true;
         firstDisk.welded = true;
         firstDisk.repaired = false;
+        firstDisk.nbrPuceRepaired = 0;
+        firstDisk.nbrPuceToRepaired = 4;
         firstDisk.installed = true;
 
-        //secondDisk.disk =
+        secondDisk.disk = secondDiskObject;
         secondDisk.locked = true;
         secondDisk.welded = true;
         secondDisk.repaired = false;
+        secondDisk.nbrPuceRepaired = 0;
+        secondDisk.nbrPuceToRepaired = 4;
         secondDisk.installed = true;
 
         //Pour toutes les cassettes qui sont en rab (afin d'éviter le soft lock)
@@ -69,6 +76,8 @@ public class GameManager : MonoBehaviour
             allDiskInScene[i].locked = false;
             allDiskInScene[i].welded = true;
             allDiskInScene[i].repaired = false;
+            allDiskInScene[i].nbrPuceRepaired = 0;
+            allDiskInScene[i].nbrPuceToRepaired = 4;
             allDiskInScene[i].installed = false;
         }
 

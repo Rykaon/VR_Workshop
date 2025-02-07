@@ -17,6 +17,8 @@ public class GrabbableTool : GrabbableObject
     protected override void InitializeObject()
     {
         base.InitializeObject();
+
+        gameObject.layer = LayerMask.NameToLayer("Tool");
     }
 
     protected override void SetCanBeGrab(bool canBeGrab)

@@ -9,6 +9,7 @@ public class GrabbableAttachedObject : GrabbableObject
     public bool isDoor;
     public bool isFirstDisk;
     public bool isLastDisk;
+    private bool hasBeenDetached = false;
     [SerializeField] protected bool isAttached;
     [SerializeField] protected bool isSnap;
     protected bool isSnapping;
@@ -36,6 +37,11 @@ public class GrabbableAttachedObject : GrabbableObject
     protected override void InitializeObject()
     {
         base.InitializeObject();
+
+        if (!isDoor)
+        {
+            gameObject.layer = LayerMask.NameToLayer("Disk");
+        }
 
         DirToDetach = (movementTransform[1].position - movementTransform[0].position).normalized;
         handsOffset = leftHandAttached.position - transform.position;
@@ -146,11 +152,59 @@ public class GrabbableAttachedObject : GrabbableObject
         {
             if (isAttached)
             {
+                if (!hasBeenDetached)
+                {
+                    if (isDoor)
+                    {
+                        GameManager.instance.firstDisk.locked = false;
+                    }
+                    else if (isFirstDisk)
+                    {
+                        GameManager.instance.checkDiskStatus.UnistallDisk(GameManager.instance.firstDisk);
+                    }
+                    else if (isLastDisk)
+                    {
+                        GameManager.instance.checkDiskStatus.UnistallDisk(GameManager.instance.secondDisk);
+                    }
+                    else
+                    {
+                        for (int i = 0; i < GameManager.instance.allDiskInScene.Length; i++)
+                        {
+                            if (this == GameManager.instance.allDiskInScene[i].disk)
+                            {
+                                GameManager.instance.checkDiskStatus.UnistallDisk(GameManager.instance.allDiskInScene[i]);
+                            }
+                        }
+                    }
+                }
+
                 isAttached = false;
                 needToBeAttached = false;
             }
             else
             {
+                if (hasBeenDetached)
+                {
+                    if (isFirstDisk)
+                    {
+                        GameManager.instance.checkDiskStatus.InstallDisk(GameManager.instance.firstDisk);
+                    }
+                    else if (isLastDisk)
+                    {
+                        GameManager.instance.checkDiskStatus.InstallDisk(GameManager.instance.secondDisk);
+                    }
+                    else
+                    {
+                        for (int i = 0; i < GameManager.instance.allDiskInScene.Length; i++)
+                        {
+                            if (this == GameManager.instance.allDiskInScene[i].disk)
+                            {
+                                GameManager.instance.checkDiskStatus.InstallDisk(GameManager.instance.allDiskInScene[i]);
+                            }
+                        }
+                    }
+                }
+
                 isAttached = true;
                 needToBeAttached = true;
             }

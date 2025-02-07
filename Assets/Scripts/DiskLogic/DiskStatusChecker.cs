@@ -4,7 +4,7 @@ public class DiskStatusChecker : MonoBehaviour
 {
     public bool IsDiskValid(DiskStatus diskToTest)
     {
-        if(diskToTest.repaired == true && diskToTest.welded == true  && diskToTest.installed == true)
+        if(diskToTest.repaired == true && diskToTest.welded == true  && diskToTest.installed == true && !GameManager.instance.secondPhase)
         {
             GameManager.instance.LaunchSecondPhase();
             return true;
@@ -44,12 +44,18 @@ public class DiskStatusChecker : MonoBehaviour
 
     public void RepairDisk(DiskStatus diskToTest)
     {
-        diskToTest.repaired = true;
+        diskToTest.nbrPuceRepaired++;
+
+        if (diskToTest.nbrPuceRepaired == diskToTest.nbrPuceToRepaired)
+        {
+            diskToTest.repaired = true;
+        }
     }
 
     public void InstallDisk(DiskStatus diskToTest)
     {
         diskToTest.installed = true;
+        IsDiskValid(diskToTest);
     }
     public void UnistallDisk(DiskStatus diskToTest)
     {

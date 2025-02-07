@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToCheck: {fileID: 4465673068093351499}
   diskCacheAttaches: []
+  diskToAttach: {fileID: 0}
   isObjectInBox: 1
   isDiskCache: 0
 --- !u!1 &3280254247362256001
@@ -266,6 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToCheck: {fileID: 6162626003396055366}
   diskCacheAttaches: []
+  diskToAttach: {fileID: 0}
   isObjectInBox: 1
   isDiskCache: 0
 --- !u!1 &7208203626160862750
@@ -400,6 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToCheck: {fileID: 7660381154743774063}
   diskCacheAttaches: []
+  diskToAttach: {fileID: 0}
   isObjectInBox: 1
   isDiskCache: 0
 --- !u!1001 &504070315722983504
@@ -586,6 +589,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1587972489627151173, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
+      propertyPath: disk
+      value: 
+      objectReference: {fileID: 4465673068093351499}
+    - target: {fileID: 1587972489627151173, guid: 9245384202813d64ab176fdc7c521aa2,
+        type: 3}
       propertyPath: isSnap
       value: 0
       objectReference: {fileID: 0}
@@ -672,7 +680,7 @@ PrefabInstance:
     - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
       propertyPath: isFirstDisk
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
@@ -1276,6 +1284,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1587972489627151173, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
+      propertyPath: disk
+      value: 
+      objectReference: {fileID: 6162626003396055366}
+    - target: {fileID: 1587972489627151173, guid: 9245384202813d64ab176fdc7c521aa2,
+        type: 3}
       propertyPath: isSnap
       value: 0
       objectReference: {fileID: 0}
@@ -1367,7 +1380,7 @@ PrefabInstance:
     - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
       propertyPath: isLastDisk
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}

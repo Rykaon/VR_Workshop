@@ -4,19 +4,9 @@ using UnityEngine;
 
 public class PuceScript : MonoBehaviour
 {
-    public enum PuceID
-    {
-        First,
-        Second,
-        Third,
-        Fourth,
-        Fifth,
-    }
-
     public GrabbableAttachedObject disk;
     public int actualCounter = 0;
     public int stepCounter;
-    public PuceID id;
     private bool isRepaired = false;
 
     public List<Material> materials;
@@ -72,23 +62,25 @@ public class PuceScript : MonoBehaviour
     {
         isRepaired = true;
 
-        switch(id)
+        if (disk == GameManager.instance.firstDisk.disk)
         {
-            case PuceID.First:
-                break;
-
-            case PuceID.Second:
-                break;
-
-            case PuceID.Third:
-                break;
-
-            case PuceID.Fourth:
-                break;
-
-            case PuceID.Fifth:
-                break;
+            GameManager.instance.checkDiskStatus.RepairDisk(GameManager.instance.firstDisk);
         }
+        else if (disk = GameManager.instance.secondDisk.disk)
+        {
+            GameManager.instance.checkDiskStatus.RepairDisk(GameManager.instance.secondDisk);
+        }
+        else
+        {
+            for (int i = 0; i < GameManager.instance.allDiskInScene.Length; i++)
+            {
+                if (disk == GameManager.instance.allDiskInScene[i].disk)
+                {
+                    GameManager.instance.checkDiskStatus.RepairDisk(GameManager.instance.allDiskInScene[i]);
+                }
+            }
+        }
+        
     }
 
 }

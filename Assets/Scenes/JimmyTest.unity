@@ -313,6 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToCheck: {fileID: 1859451841}
   diskCacheAttaches: []
+  diskToAttach: {fileID: 0}
   isObjectInBox: 1
   isDiskCache: 0
 --- !u!1 &410087039
@@ -2394,6 +2395,7 @@ MonoBehaviour:
   isGrab: 0
   body: {fileID: 1859451848}
   grabInteractable: {fileID: 1859451847}
+  disk: {fileID: 0}
   isSnap: 1
   trigger: {fileID: 235152580}
   diskCacheAttaches:
