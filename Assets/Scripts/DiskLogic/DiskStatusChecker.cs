@@ -4,7 +4,7 @@ public class DiskStatusChecker : MonoBehaviour
 {
     public bool IsDiskValid(DiskStatus diskToTest)
     {
-        if(diskToTest.repaired == true && diskToTest.welded == true  && diskToTest.installed == true && !GameManager.instance.secondPhase)
+        if(/*diskToTest.repaired == true && */diskToTest.welded == true  && diskToTest.installed == true && !GameManager.instance.secondPhase)
         {
             GameManager.instance.LaunchSecondPhase();
             return true;

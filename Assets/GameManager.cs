@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using System;
 public struct DiskStatus
 {
@@ -11,6 +12,7 @@ public struct DiskStatus
     public int nbrPuceRepaired;
     public int nbrPuceToRepaired;
     public bool installed;//Instalée (Si la disquette est sur la borne d'arcade ou non)
+    
 }
 
 public class GameManager : MonoBehaviour
@@ -20,12 +22,18 @@ public class GameManager : MonoBehaviour
     public bool secondPhase = false;
     public PlayerMovement playerMovement;
     public List<GrabbableAttachedObject> disks;
+    public Animator murs;
+    public Animator sol;
+    public InputActionProperty tr;
+
     void Awake()
     {
         if (instance != null && instance != this)
             Destroy(gameObject);    //Suppression d'une instance précédente (sécurité...)
 
         instance = this;
+
+        tr.action.started => ctx += LaunchSecondPhase();
     }
 
     public enum GameState
@@ -95,9 +103,11 @@ public class GameManager : MonoBehaviour
         {
             
             secondPhase = true;
+            Debug.Log(secondPhase);
             playerMovement.gravity = false;
             StartNoGrav?.Invoke() ;
-
+            murs.SetBool("Debut", true);
+            sol.SetBool("Debut", true);
             //SFX Level Up
             //FX Puissant éclair
 
@@ -107,6 +117,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            LaunchSecondPhase();
+        }
     }
 }
