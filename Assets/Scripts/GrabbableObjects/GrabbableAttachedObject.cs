@@ -42,6 +42,10 @@ public class GrabbableAttachedObject : GrabbableObject
         {
             gameObject.layer = LayerMask.NameToLayer("Disk");
         }
+        else
+        {
+            gameObject.layer = LayerMask.NameToLayer("Door");
+        }
 
         DirToDetach = (movementTransform[1].position - movementTransform[0].position).normalized;
         handsOffset = leftHandAttached.position - transform.position;

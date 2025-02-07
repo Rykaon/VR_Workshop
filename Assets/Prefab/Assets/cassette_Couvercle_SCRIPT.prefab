@@ -127,6 +127,7 @@ MonoBehaviour:
   isGrab: 0
   body: {fileID: 4871467813589191137}
   grabInteractable: {fileID: 187254984563148932}
+  disk: {fileID: 0}
   isSnap: 0
   trigger: {fileID: 0}
   diskCacheAttaches: []
@@ -139,7 +140,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8134635912189577403}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

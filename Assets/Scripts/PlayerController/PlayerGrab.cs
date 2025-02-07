@@ -175,22 +175,22 @@ public class PlayerGrab : PlayerComponent
 
             Vector3 rightPosition = controller.inputAction.FindActionMap("XRI RightHand").FindAction("Position").ReadValue<Vector3>();
             Vector3 leftVelocity = controller.inputAction.FindActionMap("XRI RightHand").FindAction("Velocity").ReadValue<Vector3>();
-
             if (leftVelocity.magnitude > velocityTreshold)
             {
                 SetHandIsMoving(true, false);
                 rightHandDistance = Mathf.Abs(Vector3.Distance(previousRightHandPosition, rightPosition));
+            Debug.Log(rightHandDistance);
 
                 if (rightHandDistance >= distanceAccpetance)
                 {
                     Vector3 rightHandDirection = (rightPosition - previousRightHandPosition).normalized;
-
+                    Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                     GrabbableAttachedObject rightAttachedObject = rightGrabObject as GrabbableAttachedObject;
 
                     if (rightAttachedObject != null)
                     {
                         bool isDirCheck = rightAttachedObject.CheckDirToAttach(rightHandDirection, angleAccpetance);
-                        //Debug.Log("DIR TO CHECK = " + isDirCheck);
+                        Debug.Log("DIR TO CHECK = " + isDirCheck);
                         
                         if (isDirCheck)
                         {
