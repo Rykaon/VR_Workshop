@@ -19,8 +19,13 @@ public class GrabbableAttachedObject : GrabbableObject
     [SerializeField] protected Renderer leftHandRenderer;
     [SerializeField] protected Renderer rightHandRenderer;
     [SerializeField] protected Collider collision;
+<<<<<<< Updated upstream
     [SerializeField] protected GrabbableAttachTrigger trigger;
     [SerializeField] protected Collider triggerCollider;
+=======
+    [SerializeField] public GrabbableAttachTrigger trigger;
+    [SerializeField] protected Collider TriggerCollider;
+>>>>>>> Stashed changes
     protected PlayerGrab grab;
 
     [SerializeField] protected List<Transform> movementTransform;
@@ -43,7 +48,11 @@ public class GrabbableAttachedObject : GrabbableObject
         leftHandRenderer.enabled = false;
         rightHandRenderer.enabled = false;
 
+<<<<<<< Updated upstream
         if (isFirstDisk || isLastDisk)
+=======
+        if (isFirstDisk && isLastDisk)
+>>>>>>> Stashed changes
         {
             isKinematic = true;
         }
@@ -117,15 +126,25 @@ public class GrabbableAttachedObject : GrabbableObject
 
     public bool IsInsideCollider()
     {
+<<<<<<< Updated upstream
         if (triggerCollider == null)
+=======
+        if (TriggerCollider == null)
+>>>>>>> Stashed changes
         {
             Debug.LogWarning("Aucun collider assigné !");
             return false;
         }
 
+<<<<<<< Updated upstream
         Vector3 center = triggerCollider.bounds.center;
         Vector3 halfExtents = triggerCollider.bounds.extents;
         Quaternion rotation = triggerCollider.transform.rotation;
+=======
+        Vector3 center = TriggerCollider.bounds.center;
+        Vector3 halfExtents = TriggerCollider.bounds.extents;
+        Quaternion rotation = TriggerCollider.transform.rotation;
+>>>>>>> Stashed changes
 
         Collider[] detectedObjects = Physics.OverlapBox(center, halfExtents, rotation);
 
@@ -251,8 +270,18 @@ public class GrabbableAttachedObject : GrabbableObject
         }
     }
 
+<<<<<<< Updated upstream
     protected override void Update()
     {
+=======
+    protected override void InitNoGrav()
+    {
+        base.InitNoGrav();
+    }
+
+    protected override void Update()
+    {
+>>>>>>> Stashed changes
         base.Update();
 
         if (!isSnap && !isSnapping)

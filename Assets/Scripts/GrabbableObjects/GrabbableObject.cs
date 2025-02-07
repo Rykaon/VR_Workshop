@@ -10,7 +10,9 @@ public class GrabbableObject : MonoBehaviour
     public bool isKinematic;
     public bool canBeGrab;
     public bool isGrab;
-    [SerializeField] protected Rigidbody body;
+    public bool isKinematic;
+
+    [SerializeField] public Rigidbody body;
     [SerializeField] protected XRGrabInteractable grabInteractable;
     protected XRInteractionManager interactionManager;
     protected XRDirectInteractor interactor;
@@ -27,6 +29,11 @@ public class GrabbableObject : MonoBehaviour
         grabInteractable.selectFilters.Add(new CanBeGrabbedFilter(this));
         interactionManager = GameObject.Find("XR Interaction Manager").GetComponent<XRInteractionManager>();
         isKinematic = false;
+<<<<<<< Updated upstream
+=======
+        grabInteractable.movementType = XRBaseInteractable.MovementType.VelocityTracking;
+
+>>>>>>> Stashed changes
         gameObject.layer = LayerMask.NameToLayer("Grabbable");
     }
 

@@ -25,6 +25,8 @@ public class GrabHandDetection : MonoBehaviour
             return;
         }
 
+        Debug.Log(grabbableObject.name);
+
         if (interactor == grab.controller.leftInteractor)
         {
             activeHand = "LeftHand";
@@ -38,7 +40,10 @@ public class GrabHandDetection : MonoBehaviour
 
         if (!trigger.grabbableObjects.Contains(grabbableObject) && !grabbableObject.isKinematic)
         {
+<<<<<<< Updated upstream
             Debug.Log("add");
+=======
+>>>>>>> Stashed changes
             trigger.grabbableObjects.Add(grabbableObject);
         }
     }
@@ -50,5 +55,11 @@ public class GrabHandDetection : MonoBehaviour
             trigger.grabbableObjects.Remove(grabbableObject);
             Debug.Log("remove");
         }
+    }
+
+    public void ListenEvents()
+    {
+        grabInteractable.hoverEntered.AddListener(OnHoverEnter);
+        grabInteractable.hoverExited.AddListener(OnHoverExit);
     }
 }

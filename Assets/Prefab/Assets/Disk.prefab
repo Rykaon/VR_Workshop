@@ -65,8 +65,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.32, y: 0.38, z: 0.108}
-  m_Center: {x: 0, y: 0.2, z: 0.019}
+  m_Size: {x: 0.32, y: 0.38, z: 0.08708691}
+  m_Center: {x: 0, y: 0.19999999, z: 0.029456545}
 --- !u!114 &3562085364792391724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,8 +81,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBeGrab: 0
   isGrab: 0
+  isKinematic: 0
   body: {fileID: 7602657012285933053}
   grabInteractable: {fileID: 5323097753401838456}
+  isDoor: 0
+  isFirstDisk: 0
+  isLastDisk: 0
   isAttached: 0
   isSnap: 0
   leftHandAttached: {fileID: 3137611252819242491}
@@ -92,6 +96,7 @@ MonoBehaviour:
   rightHandRenderer: {fileID: 6142153360097998583}
   collision: {fileID: 1282775908807989627}
   trigger: {fileID: 0}
+  TriggerCollider: {fileID: 0}
   movementTransform: []
 --- !u!54 &7602657012285933053
 Rigidbody:
@@ -1438,9 +1443,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBeGrab: 0
   isGrab: 0
+  isKinematic: 0
   body: {fileID: 7382822828258360109}
   grabInteractable: {fileID: 8087440166799766560}
   isSnap: 1
+  Disk: {fileID: 0}
+  handDetection: {fileID: 0}
   trigger: {fileID: 0}
   diskCacheAttaches:
   - {fileID: 561075415178164596}

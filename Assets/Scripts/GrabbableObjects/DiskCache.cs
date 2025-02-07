@@ -7,7 +7,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class DiskCache : GrabbableObject
 {
     public bool isSnap = true;
-    [SerializeField] private GrabbableAttachTrigger trigger;
+    public bool needToBeSnapped;
+    [SerializeField] private GrabbableAttachedObject Disk;
+    private XRGrabInteractable grabInteractableCopy;
+    [SerializeField] private GrabHandDetection handDetection;
+    [SerializeField] public GrabbableAttachTrigger trigger;
     [SerializeField] public List<DiskCacheAttach> diskCacheAttaches;
     [SerializeField] public Collider collision;
     Tween posTween;
@@ -36,7 +40,6 @@ public class DiskCache : GrabbableObject
 
         yield return new WaitForSecondsRealtime(0.5f);
 
-        body.isKinematic = true;
         isSnap = true;
     }
 
@@ -74,6 +77,10 @@ public class DiskCache : GrabbableObject
 
             if (canBeDettach)
             {
+<<<<<<< Updated upstream
+=======
+                Debug.Log("yo");
+>>>>>>> Stashed changes
                 SetCanBeGrab(true);
             }
         }
@@ -83,10 +90,28 @@ public class DiskCache : GrabbableObject
     {
         base.InitializeObject();
 
+<<<<<<< Updated upstream
         canBeGrab = false;
         collision.isTrigger = true;
         trigger.isDiskCache = true;
         gameObject.layer = LayerMask.NameToLayer("DiskCache");
+=======
+        if (trigger != null)
+        {
+            trigger.isDiskCache = true;
+            trigger.diskCacheAttaches = diskCacheAttaches;
+        }
+        
+        gameObject.layer = LayerMask.NameToLayer("DiskCache");
+        grabInteractableCopy = grabInteractable;
+
+        if (!canBeGrab)
+        {
+            Destroy(grabInteractable);
+            Destroy(body);
+            collision.isTrigger = true;
+        }
+>>>>>>> Stashed changes
     }
 
     public override void SetIsGrab(bool value, XRDirectInteractor interactor)
@@ -98,7 +123,7 @@ public class DiskCache : GrabbableObject
             if (value)
             {
                 this.interactor = interactor;
-                
+                Debug.Log("lallalalalalalalalalalalal");
                 if (posTween != null)
                 {
                     posTween.Kill();
@@ -119,6 +144,17 @@ public class DiskCache : GrabbableObject
         }
     }
 
+    protected void CopyXRGrabInteractable()
+    {
+        grabInteractable.interactionLayers = grabInteractableCopy.interactionLayers;
+        grabInteractable.selectEntered = grabInteractableCopy.selectEntered;
+        grabInteractable.selectExited = grabInteractableCopy.selectExited;
+        grabInteractable.hoverEntered = grabInteractableCopy.hoverEntered;
+        grabInteractable.hoverExited = grabInteractableCopy.hoverExited;
+        grabInteractable.attachTransform = grabInteractableCopy.attachTransform;
+        grabInteractable.interactionManager = grabInteractableCopy.interactionManager;
+    }
+
     protected override void SetCanBeGrab(bool canBeGrab)
     {
         this.canBeGrab = canBeGrab;
@@ -126,8 +162,37 @@ public class DiskCache : GrabbableObject
         if (canBeGrab)
         {
             Debug.Log("SetCanGrab to True // " + isGrab);
-            body.isKinematic = false;
-            collision.isTrigger = false;
+            
+            if (body == null)
+            {
+                
+                body = gameObject.AddComponent<Rigidbody>();
+                body.useGravity = true;
+                body.isKinematic = false;
+                grabInteractable = gameObject.AddComponent<XRGrabInteractable>();
+                handDetection.grabInteractable = grabInteractable;
+                CopyXRGrabInteractable();
+                /*grabInteractable.hoverEntered.AddListener((args) => handDetection.OnHoverEnter(args));
+                grabInteractable.hoverExited.AddListener((args) => handDetection.OnHoverExit(args));*/
+                grabInteractable.movementType = XRBaseInteractable.MovementType.VelocityTracking;
+
+                if (posTween != null)
+                {
+                    posTween.Kill();
+                    rotTween.Kill();
+                    collision.isTrigger = false;
+                }
+
+                if (routine != null)
+                {
+                    collision.isTrigger = false;
+                    StopCoroutine(routine);
+                }
+                Debug.Log("yo");
+                
+                body.AddForce((Vector3.up + new Vector3(Random.value, 0, Random.value)) * 15f, ForceMode.Impulse);
+                StartCoroutine(Boom());
+            }
 
             if (isGrab)
             {
@@ -139,8 +204,26 @@ public class DiskCache : GrabbableObject
         }
         else
         {
-            collision.isTrigger = false;
+            Destroy(grabInteractable);
+            Destroy(body);
             Debug.Log("SetCanGrab to False");
         }
+    }
+
+    protected IEnumerator Boom()
+    {
+        yield return new WaitForSecondsRealtime(0.35f);
+        trigger.objectToCheck = null;
+        Destroy(this);
+    }
+
+    protected override void InitNoGrav()
+    {
+        base.InitNoGrav();
+    }
+
+    protected override void Update()
+    {
+        base.Update();
     }
 }

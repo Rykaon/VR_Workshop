@@ -1020,9 +1020,14 @@ MonoBehaviour:
   isKinematic: 0
   canBeGrab: 0
   isGrab: 0
+  isKinematic: 0
   body: {fileID: 4341379932212942997}
   grabInteractable: {fileID: 7346248277062242336}
+<<<<<<< Updated upstream
   isDoor: 1
+=======
+  isDoor: 0
+>>>>>>> Stashed changes
   isFirstDisk: 0
   isLastDisk: 0
   isAttached: 1
@@ -1034,7 +1039,11 @@ MonoBehaviour:
   rightHandRenderer: {fileID: 2907207669087559898}
   collision: {fileID: 8738152405291670290}
   trigger: {fileID: 6019003288157049898}
+<<<<<<< Updated upstream
   triggerCollider: {fileID: 0}
+=======
+  TriggerCollider: {fileID: 0}
+>>>>>>> Stashed changes
   movementTransform:
   - {fileID: 3407144934007221891}
   - {fileID: 6432844914464854592}

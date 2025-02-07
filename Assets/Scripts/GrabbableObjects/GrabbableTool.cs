@@ -65,4 +65,14 @@ public class GrabbableTool : GrabbableObject
             }
         }
     }
+
+    protected override void InitNoGrav()
+    {
+        base.InitNoGrav();
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+    }
 }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GrabbableAttachTrigger : MonoBehaviour
 {
-    [SerializeField] GrabbableObject objectToCheck;
+    [SerializeField] public GrabbableObject objectToCheck;
+    [SerializeField] public List<DiskCacheAttach> diskCacheAttaches;
     public bool isObjectInBox;
     public bool isDiskCache = false;
 
@@ -21,7 +22,31 @@ public class GrabbableAttachTrigger : MonoBehaviour
                     if (isDiskCache && !grab.isGrab)
                     {
                         DiskCache diskCache = grab as DiskCache;
+
+                        if (!diskCache.isSnap)
+                        {
+                            diskCache.Snap();
+                            Debug.Log("yooooooooooooooooooooo");
+                        }
+                    }
+                }
+                else if (objectToCheck == null && isDiskCache)
+                {
+                    DiskCache diskCache = grab as DiskCache;
+
+                    if (diskCache != null)
+                    {
+                        objectToCheck = diskCache;
+                        diskCache.trigger = this;
+                        diskCache.diskCacheAttaches = diskCacheAttaches;
+                        diskCache.body.useGravity = false;
+                        diskCache.body.isKinematic = true;
+                        foreach (DiskCacheAttach attach in diskCacheAttaches)
+                        {
+                            attach.diskCache = diskCache;
+                        }
                         diskCache.Snap();
+                        Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                     }
                 }
             }
