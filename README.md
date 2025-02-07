@@ -43,18 +43,22 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" height="40" alt="unity logo"  />
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" height="40" alt="blender logo"  />
-  
-  
 </div>
 
 ###
 
-<h2 align="left">Links</h2>
+<h2 align="left">Team Credits</h2>
 
 <div>
   @Rykaon (as Programmer)<br>
-  @Jothecat16 (as GameDesigner)<br>
-  @
+  @Theo Moreau (as Programmer)<br>
+  @Jothecat16 (as Game Designer)<br>
+  @Hashe (as Game Designer)<br>
+  @kaiiros7 (as Game Designer / Sound Designer)<br>
+  @byJaveo (as Game Artist)<br>
+  @Weedoos (as Game Artist)<br>
+  @Eloxse (VFX Artist)<br>
+  @Wolfgang5960 (as Game Artist)
 </div>
 
 ###
