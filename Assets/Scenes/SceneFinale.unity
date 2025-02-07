@@ -1591,7 +1591,7 @@ PrefabInstance:
     - target: {fileID: 4301372701913618574, guid: a0842a0d1b798b14aab57ba432012a8a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4475379071543034418, guid: a0842a0d1b798b14aab57ba432012a8a,
         type: 3}
@@ -6476,7 +6476,7 @@ PrefabInstance:
     - target: {fileID: 4301372701913618574, guid: a0842a0d1b798b14aab57ba432012a8a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4475379071543034418, guid: a0842a0d1b798b14aab57ba432012a8a,
         type: 3}
@@ -6727,7 +6727,7 @@ PrefabInstance:
     - target: {fileID: 4301372701913618574, guid: a0842a0d1b798b14aab57ba432012a8a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4475379071543034418, guid: a0842a0d1b798b14aab57ba432012a8a,
         type: 3}
@@ -11369,6 +11369,20 @@ MonoBehaviour:
   disks:
   - {fileID: 1032640861}
   - {fileID: 617171444}
+  murs: {fileID: 0}
+  sol: {fileID: 0}
+  tr:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   currentState: 0
   checkDiskStatus: {fileID: 941217747}
 --- !u!4 &941217749

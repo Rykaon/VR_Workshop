@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
         instance = this;
 
-        tr.action.started => ctx += LaunchSecondPhase();
+        tr.action.started += ctx => LaunchSecondPhase();
     }
 
     public enum GameState
