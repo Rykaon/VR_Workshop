@@ -6,7 +6,7 @@
 
 ###
 
-<p align="left">Arcade Glitch is a Virtual Reality game made in five days by a student team. <br>In this game, the player embodies an arcade terminal repairer. The player is sitting on a chair and must push himself thanks to the elements of scenery to move and reach tools, in order to repair a special arcade terminal. This machine has created a time-space rift witch cause glitches and changes in reality.</p>
+<p align="left">Arcade Glitch is a **Virtual Reality game** made in five days by a student team. <br>In this game, the player embodies an arcade terminal repairer. Your machine has created a **time-space rift** witch cause glitches and changes in reality.Your mission is to sit on a chair and push yourself to move by grabbing the elements of the scene. You have to reach tools in order to repair the two tape of the arcade terminal. </p>
 
 ###
 
