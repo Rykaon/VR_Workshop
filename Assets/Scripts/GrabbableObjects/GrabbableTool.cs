@@ -2,13 +2,14 @@ using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class GrabbableTool : GrabbableObject
 {
     [SerializeField] public bool isBlowTorch;
     [SerializeField] BlowTorchTrigger trigger;
-
+    [SerializeField] VisualEffect blowtorchFlame;
     void Start()
     {
         InitializeObject();
@@ -19,6 +20,11 @@ public class GrabbableTool : GrabbableObject
         base.InitializeObject();
 
         gameObject.layer = LayerMask.NameToLayer("Tool");
+
+        if (isBlowTorch)
+        {
+            blowtorchFlame.Stop();
+        }
     }
 
     protected override void SetCanBeGrab(bool canBeGrab)
@@ -55,6 +61,11 @@ public class GrabbableTool : GrabbableObject
         {
             if (isActive)
             {
+                if (isBlowTorch && blowtorchFlame.aliveParticleCount < 0)
+                {
+                    blowtorchFlame.Play();
+                }
+
                 Debug.Log(isActive);
                 if (trigger.diskCacheAttach != null)
                 {
@@ -63,7 +74,10 @@ public class GrabbableTool : GrabbableObject
             }
             else
             {
-
+                if (isBlowTorch && blowtorchFlame.aliveParticleCount > 0)
+                {
+                    blowtorchFlame.Stop();
+                }
             }
         }
     }

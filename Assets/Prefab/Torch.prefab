@@ -99,8 +99,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.263, y: 0.05, z: 1.4728622}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3707648599132490851}
   - {fileID: 4150340011508676095}
@@ -147,6 +147,7 @@ MonoBehaviour:
   grabInteractable: {fileID: 3066941365263597960}
   isBlowTorch: 1
   trigger: {fileID: 1774928959759511759}
+  blowtorchFlame: {fileID: 5842869726475263686}
 --- !u!54 &8359675363973928247
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -448,6 +449,12 @@ PrefabInstance:
 --- !u!4 &667079999408730073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2510816528973080320, guid: 6966142237890b343ac996c5c50e6632,
+    type: 3}
+  m_PrefabInstance: {fileID: 3141762036461521113}
+  m_PrefabAsset: {fileID: 0}
+--- !u!2083052967 &5842869726475263686 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 8831502665791428127, guid: 6966142237890b343ac996c5c50e6632,
     type: 3}
   m_PrefabInstance: {fileID: 3141762036461521113}
   m_PrefabAsset: {fileID: 0}
