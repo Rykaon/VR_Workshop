@@ -32,6 +32,7 @@ public class GrabbableAttachTrigger : MonoBehaviour
                 }
                 else if (objectToCheck == null && isDiskCache)
                 {
+                    Debug.Log("PIPI");
                     DiskCache diskCache = grab as DiskCache;
 
                     if (diskCache != null)

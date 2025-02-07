@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7653953432704844403}
   - component: {fileID: 7725840879143033173}
   - component: {fileID: 64117830303519270}
-  - component: {fileID: 7311974897792626214}
+  - component: {fileID: 253571067302233568}
   - component: {fileID: 5452543136081341414}
   - component: {fileID: 4871467813589191137}
   - component: {fileID: 187254984563148932}
@@ -88,8 +88,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7311974897792626214
-MeshCollider:
+--- !u!65 &253571067302233568
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,10 +106,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3938444545708078712, guid: 91ee9678bab62f14989f9bec70546407, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.27544194, y: 0.2811361, z: 0.052912712}
+  m_Center: {x: 0, y: 0.006206974, z: 0.026456356}
 --- !u!114 &5452543136081341414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +130,7 @@ MonoBehaviour:
   isSnap: 0
   trigger: {fileID: 0}
   diskCacheAttaches: []
-  collision: {fileID: 7311974897792626214}
+  collision: {fileID: 253571067302233568}
 --- !u!54 &4871467813589191137
 Rigidbody:
   m_ObjectHideFlags: 0

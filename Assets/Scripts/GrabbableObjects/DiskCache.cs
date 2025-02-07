@@ -90,11 +90,12 @@ public class DiskCache : GrabbableObject
         else
         {
             bool canBeDettach = true;
-
+            Debug.Log("caca2");
             foreach (DiskCacheAttach item in diskCacheAttaches)
             {
                 if (item.isActive)
                 {
+                    Debug.Log("cacaaaaaaaaaaaaaa");
                     canBeDettach = false;
                     break;
                 }
@@ -102,6 +103,7 @@ public class DiskCache : GrabbableObject
 
             if (canBeDettach)
             {
+                Debug.Log("caaaaaaaaaaaaaCCCCCaaaaaaaaaaaaa");
                 SetCanBeGrab(true);
             }
         }
@@ -109,7 +111,10 @@ public class DiskCache : GrabbableObject
 
     protected override void InitializeObject()
     {
-        base.InitializeObject();
+        grabInteractable.selectFilters.Add(new CanBeGrabbedFilter(this));
+        interactionManager = GameObject.Find("XR Interaction Manager").GetComponent<XRInteractionManager>();
+        isKinematic = false;
+        gameObject.layer = LayerMask.NameToLayer("Grabbable");
 
         gameObject.layer = LayerMask.NameToLayer("DiskCache");
 
@@ -168,27 +173,30 @@ public class DiskCache : GrabbableObject
             if (body == null)
             {
                 body = gameObject.AddComponent<Rigidbody>();
-                body.AddForce((Vector3.up + new Vector3(Random.value, 0, Random.value)) * 15f, ForceMode.Impulse);
+            }
 
-                if (disk == GameManager.instance.firstDisk.disk)
+            body.AddForce((Vector3.up + new Vector3(Random.value, 0, Random.value)) * 15f, ForceMode.Impulse);
+            Debug.Log("pipi");
+            if (disk == GameManager.instance.firstDisk.disk)
+            {
+                GameManager.instance.checkDiskStatus.UnweldDisk(GameManager.instance.firstDisk);
+            }
+            else if (disk = GameManager.instance.secondDisk.disk)
+            {
+                GameManager.instance.checkDiskStatus.UnweldDisk(GameManager.instance.secondDisk);
+            }
+            else
+            {
+                for (int i = 0; i < GameManager.instance.allDiskInScene.Length; i++)
                 {
-                    GameManager.instance.checkDiskStatus.UnweldDisk(GameManager.instance.firstDisk);
-                }
-                else if (disk = GameManager.instance.secondDisk.disk)
-                {
-                    GameManager.instance.checkDiskStatus.UnweldDisk(GameManager.instance.secondDisk);
-                }
-                else
-                {
-                    for (int i = 0; i < GameManager.instance.allDiskInScene.Length; i++)
+                    if (disk == GameManager.instance.allDiskInScene[i].disk)
                     {
-                        if (disk == GameManager.instance.allDiskInScene[i].disk)
-                        {
-                            GameManager.instance.checkDiskStatus.UnweldDisk(GameManager.instance.allDiskInScene[i]);
-                        }
+                        GameManager.instance.checkDiskStatus.UnweldDisk(GameManager.instance.allDiskInScene[i]);
                     }
                 }
             }
+
+            StartCoroutine(Boom());
 
             if (isGrab)
             {

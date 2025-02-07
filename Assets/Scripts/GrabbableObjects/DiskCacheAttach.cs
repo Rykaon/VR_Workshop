@@ -30,9 +30,9 @@ public class DiskCacheAttach : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.5f);
 
         this.isActive = isActive;
+        meshRenderer.enabled = isActive;
         diskCache.Attach();
-        Debug.Log("caca");
-        meshRenderer.enabled = !isActive;
+        Debug.Log(isActive);
         if (isActive)
         {
 
