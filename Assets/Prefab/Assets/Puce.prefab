@@ -96,10 +96,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4730917b216c02045aaf5a4fcec3ca1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disk: {fileID: 0}
   actualCounter: 0
   stepCounter: 3
+  id: 0
   materials:
   - {fileID: 2100000, guid: eaaee36ad7449b8499e4ed98c2ebc568, type: 2}
   - {fileID: 2100000, guid: 4bbe88e0f86518548a22e2b7e056e5f6, type: 2}
   - {fileID: 2100000, guid: 064b5fe514365e1429dcb0f6a6d92f34, type: 2}
+  - {fileID: 2100000, guid: 7293ab3a2b56ed94bb6b6dec87df5b0b, type: 2}
   rendererPuce: {fileID: 8966050648317205543}

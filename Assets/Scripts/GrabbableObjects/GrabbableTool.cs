@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GrabbableTool : GrabbableObject
 {
-    [SerializeField] bool isBlowTorch;
+    [SerializeField] public bool isBlowTorch;
     [SerializeField] BlowTorchTrigger trigger;
 
     void Start()

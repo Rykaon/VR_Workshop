@@ -3020,16 +3020,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5452543136081341414, guid: b60a852f75f391a44af15c477c605a3c,
-        type: 3}
-      propertyPath: canBeGrab
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5452543136081341414, guid: b60a852f75f391a44af15c477c605a3c,
-        type: 3}
-      propertyPath: diskCacheAttaches.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7653953432704844403, guid: b60a852f75f391a44af15c477c605a3c,
         type: 3}
       propertyPath: m_LocalPosition.x

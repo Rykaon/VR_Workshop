@@ -4,41 +4,91 @@ using UnityEngine;
 
 public class PuceScript : MonoBehaviour
 {
-    public int actualCounter;
+    public enum PuceID
+    {
+        First,
+        Second,
+        Third,
+        Fourth,
+        Fifth,
+    }
+
+    public GrabbableAttachedObject disk;
+    public int actualCounter = 0;
     public int stepCounter;
+    public PuceID id;
+    private bool isRepaired = false;
 
     public List<Material> materials;
 
     public Renderer rendererPuce;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    int materialCount = 0;
+    int maxCount = 9;
 
     
-        private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out GrabbableObject obj) && actualCounter < stepCounter)
         {
-            if (other.TryGetComponent(out GrabbableTool tool) && actualCounter < stepCounter)
-        {
-            actualCounter++;
-            rendererPuce.materials[0] = materials[actualCounter+1];
-            if (actualCounter >= stepCounter)
+            GrabbableTool tool = obj as GrabbableTool;
+
+            stepCounter = 1;
+
+            if (tool != null)
+            {
+                if (tool.isBlowTorch)
                 {
-                    Rafitstole();   
+                    stepCounter = 3;
                 }
             }
 
+            actualCounter += stepCounter;
+
+            if (materialCount == 0 && actualCounter == 3)
+            {
+                materialCount++;
+                rendererPuce.materials[0] = materials[materialCount];
+            }
+            else if (materialCount == 1 && actualCounter == 6)
+            {
+                materialCount++;
+                rendererPuce.materials[0] = materials[materialCount];
+            }
+            else if (materialCount == 2 && actualCounter == 9)
+            {
+                materialCount++;
+                rendererPuce.materials[0] = materials[materialCount];
+
+                if (!isRepaired)
+                {
+                    Rafitstole();
+                }
+            }
         }
+
+    }
 
     public void Rafitstole()
     {
+        isRepaired = true;
 
+        switch(id)
+        {
+            case PuceID.First:
+                break;
+
+            case PuceID.Second:
+                break;
+
+            case PuceID.Third:
+                break;
+
+            case PuceID.Fourth:
+                break;
+
+            case PuceID.Fifth:
+                break;
+        }
     }
 
 }
