@@ -594,7 +594,7 @@ PrefabInstance:
     - target: {fileID: 1841574238643773377, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.087999985
+      value: 1.031
       objectReference: {fileID: 0}
     - target: {fileID: 1841574238643773377, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
@@ -685,6 +685,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Disk_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485312310618304467, guid: 9245384202813d64ab176fdc7c521aa2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.629
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1029,6 +1034,7 @@ MonoBehaviour:
   rightHandRenderer: {fileID: 2907207669087559898}
   collision: {fileID: 8738152405291670290}
   trigger: {fileID: 6019003288157049898}
+  triggerCollider: {fileID: 0}
   movementTransform:
   - {fileID: 3407144934007221891}
   - {fileID: 6432844914464854592}
