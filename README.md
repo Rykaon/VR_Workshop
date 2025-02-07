@@ -22,6 +22,17 @@
 
 ###
 
+<h2 align="left">How to instal ?</h2>
+
+###
+
+<p align="left">
+  10+40
+</p>
+
+###
+###
+
 <h2 align="left">Gameplay Pictures</h2>
 
 ###
