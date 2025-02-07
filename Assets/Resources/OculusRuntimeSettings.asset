@@ -17,10 +17,14 @@ MonoBehaviour:
   requestsVisualFaceTracking: 1
   requestsAudioFaceTracking: 1
   enableFaceTrackingVisemesOutput: 0
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   telemetryProjectGuid: fa61aa50-41cd-49cb-91ac-40da445107e9
 =======
   telemetryProjectGuid: 6b3f020f-a171-458d-bf0e-a32012c35554
 >>>>>>> Stashed changes
+=======
+  telemetryProjectGuid: 93b90e4c-3819-41cf-bc63-29a81b393292
+>>>>>>> parent of f328f69 (Merge branch 'Branche-dangereuse')
   bodyTrackingFidelity: 1
   bodyTrackingJointSet: 0

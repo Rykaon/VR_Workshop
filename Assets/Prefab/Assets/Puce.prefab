@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6370136727480008088}
   - component: {fileID: 5237463593628467784}
   - component: {fileID: 8966050648317205543}
-  - component: {fileID: 8691562381874107455}
   m_Layer: 0
   m_Name: Puce
   m_TagString: Untagged
@@ -84,22 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8691562381874107455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6651547455326321581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4730917b216c02045aaf5a4fcec3ca1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualCounter: 0
-  stepCounter: 3
-  materials:
-  - {fileID: 2100000, guid: eaaee36ad7449b8499e4ed98c2ebc568, type: 2}
-  - {fileID: 2100000, guid: 4bbe88e0f86518548a22e2b7e056e5f6, type: 2}
-  - {fileID: 2100000, guid: 064b5fe514365e1429dcb0f6a6d92f34, type: 2}
-  rendererPuce: {fileID: 8966050648317205543}

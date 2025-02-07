@@ -59,6 +59,7 @@ public class DiskCache : GrabbableObject
 
             if (canBeAttach)
             {
+                Debug.Log("ooooooooooooooooooooooooooooooooooooo");
                 SetCanBeGrab(false);
             }
         }
@@ -77,10 +78,14 @@ public class DiskCache : GrabbableObject
 
             if (canBeDettach)
             {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
                 Debug.Log("yo");
 >>>>>>> Stashed changes
+=======
+                Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+>>>>>>> parent of f328f69 (Merge branch 'Branche-dangereuse')
                 SetCanBeGrab(true);
             }
         }
@@ -94,6 +99,7 @@ public class DiskCache : GrabbableObject
         canBeGrab = false;
         collision.isTrigger = true;
         trigger.isDiskCache = true;
+<<<<<<< HEAD
         gameObject.layer = LayerMask.NameToLayer("DiskCache");
 =======
         if (trigger != null)
@@ -112,6 +118,8 @@ public class DiskCache : GrabbableObject
             collision.isTrigger = true;
         }
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of f328f69 (Merge branch 'Branche-dangereuse')
     }
 
     public override void SetIsGrab(bool value, XRDirectInteractor interactor)

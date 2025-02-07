@@ -38,12 +38,16 @@ public class GrabHandDetection : MonoBehaviour
             trigger = grab.controller.rightTrigger;
         }
 
-        if (!trigger.grabbableObjects.Contains(grabbableObject) && !grabbableObject.isKinematic)
+        if (!trigger.grabbableObjects.Contains(grabbableObject))
         {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             Debug.Log("add");
 =======
 >>>>>>> Stashed changes
+=======
+            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+>>>>>>> parent of f328f69 (Merge branch 'Branche-dangereuse')
             trigger.grabbableObjects.Add(grabbableObject);
         }
     }
@@ -53,7 +57,6 @@ public class GrabHandDetection : MonoBehaviour
         if (trigger.grabbableObjects.Contains(grabbableObject))
         {
             trigger.grabbableObjects.Remove(grabbableObject);
-            Debug.Log("remove");
         }
     }
 

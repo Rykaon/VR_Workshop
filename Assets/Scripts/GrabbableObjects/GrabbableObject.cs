@@ -7,7 +7,6 @@ using UnityEngine.XR.Interaction.Toolkit.Filtering;
 
 public class GrabbableObject : MonoBehaviour
 {
-    public bool isKinematic;
     public bool canBeGrab;
     public bool isGrab;
     public bool isKinematic;
@@ -28,6 +27,7 @@ public class GrabbableObject : MonoBehaviour
         SetCanBeGrab(canBeGrab);
         grabInteractable.selectFilters.Add(new CanBeGrabbedFilter(this));
         interactionManager = GameObject.Find("XR Interaction Manager").GetComponent<XRInteractionManager>();
+<<<<<<< HEAD
         isKinematic = false;
 <<<<<<< Updated upstream
 =======
@@ -35,6 +35,8 @@ public class GrabbableObject : MonoBehaviour
 
 >>>>>>> Stashed changes
         gameObject.layer = LayerMask.NameToLayer("Grabbable");
+=======
+>>>>>>> parent of f328f69 (Merge branch 'Branche-dangereuse')
     }
 
     protected virtual void SetCanBeGrab(bool canBeGrab)
@@ -63,7 +65,6 @@ public class GrabbableObject : MonoBehaviour
     {
         if (isGrab != value)
         {
-            Debug.Log(value);
             isGrab = value;
 
             if (value)
@@ -85,7 +86,7 @@ public class GrabbableObject : MonoBehaviour
         }
     }
 
-    protected virtual void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -94,7 +95,7 @@ public class GrabbableObject : MonoBehaviour
     }
 
 
-    protected virtual void InitNoGrav()
+    private void InitNoGrav()
     {
         GetComponent<Rigidbody>().useGravity = false;
         Vector3 forceStartGrav = new Vector3(Random.Range(-0.5f,0.5f), Random.Range(2.5f,3), Random.Range(-0.5f, 0.5f));

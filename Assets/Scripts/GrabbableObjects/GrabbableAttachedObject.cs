@@ -6,9 +6,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GrabbableAttachedObject : GrabbableObject
 {
-    public bool isDoor;
-    public bool isFirstDisk;
-    public bool isLastDisk;
     [SerializeField] protected bool isAttached;
     [SerializeField] protected bool isSnap;
     protected bool isSnapping;
@@ -21,11 +18,14 @@ public class GrabbableAttachedObject : GrabbableObject
     [SerializeField] protected Collider collision;
 <<<<<<< Updated upstream
     [SerializeField] protected GrabbableAttachTrigger trigger;
+<<<<<<< HEAD
     [SerializeField] protected Collider triggerCollider;
 =======
     [SerializeField] public GrabbableAttachTrigger trigger;
     [SerializeField] protected Collider TriggerCollider;
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of f328f69 (Merge branch 'Branche-dangereuse')
     protected PlayerGrab grab;
 
     [SerializeField] protected List<Transform> movementTransform;
@@ -47,6 +47,7 @@ public class GrabbableAttachedObject : GrabbableObject
         grab = GameObject.Find("Camera Offset").GetComponent<PlayerGrab>();
         leftHandRenderer.enabled = false;
         rightHandRenderer.enabled = false;
+<<<<<<< HEAD
 
 <<<<<<< Updated upstream
         if (isFirstDisk || isLastDisk)
@@ -56,6 +57,8 @@ public class GrabbableAttachedObject : GrabbableObject
         {
             isKinematic = true;
         }
+=======
+>>>>>>> parent of f328f69 (Merge branch 'Branche-dangereuse')
     }
 
     public override void SetIsGrab(bool value, XRDirectInteractor interactor)
@@ -93,11 +96,6 @@ public class GrabbableAttachedObject : GrabbableObject
         }
     }
 
-    protected override void SetCanBeGrab(bool canBeGrab)
-    {
-        base.SetCanBeGrab(canBeGrab);
-    }
-
     public virtual bool CheckDirToAttach(Vector3 DirToCheck, float acceptanceAngle)
     {
         Vector3 DirToMatch;
@@ -115,7 +113,7 @@ public class GrabbableAttachedObject : GrabbableObject
 
         if (!isAttached)
         {
-            if (!IsInsideCollider())
+            if (!trigger.isObjectInBox)
             {
                 return false;
             }
@@ -124,6 +122,7 @@ public class GrabbableAttachedObject : GrabbableObject
         return angle <= acceptanceAngle;
     }
 
+<<<<<<< HEAD
     public bool IsInsideCollider()
     {
 <<<<<<< Updated upstream
@@ -159,6 +158,8 @@ public class GrabbableAttachedObject : GrabbableObject
         return false;
     }
 
+=======
+>>>>>>> parent of f328f69 (Merge branch 'Branche-dangereuse')
     public virtual void SetIsAttached()
     {
         if (isSnap)
@@ -207,10 +208,11 @@ public class GrabbableAttachedObject : GrabbableObject
         }
 
         Tween posTween = transform.DOMove(posToSnap, transitionTime);
-        Tween rotTween = transform.DORotate(rotToSnap, transitionTime);
+        //Tween rotTween = transform.DORotate(rotToSnap, transitionTime);
 
         while (transform.position != posToSnap)
         {
+            Debug.Log("aaaaaaaaaaaaaah");
             elapsedTime += Time.deltaTime;
             float newTime = transitionTime - elapsedTime;
 
@@ -228,19 +230,19 @@ public class GrabbableAttachedObject : GrabbableObject
             if (newTime > 0f)
             {
                 posTween = transform.DOMove(posToSnap, newTime);
-                rotTween = transform.DORotate(rotToSnap, newTime);
+                //rotTween = transform.DORotate(rotToSnap, newTime);
             }
             else
             {
                 transform.position = posToSnap;
                 transform.rotation = Quaternion.Euler(rotToSnap);
                 posTween.Kill();
-                rotTween.Kill();
+                //rotTween.Kill();
             }
         }
 
         posTween.Kill();
-        rotTween.Kill();
+        //rotTween.Kill();
         SetSnap();
 
         yield return null;
@@ -270,6 +272,7 @@ public class GrabbableAttachedObject : GrabbableObject
         }
     }
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     protected override void Update()
     {
@@ -284,14 +287,13 @@ public class GrabbableAttachedObject : GrabbableObject
 >>>>>>> Stashed changes
         base.Update();
 
+=======
+    private void Update()
+    {
+>>>>>>> parent of f328f69 (Merge branch 'Branche-dangereuse')
         if (!isSnap && !isSnapping)
         {
             StartCoroutine(SnapTo());
         }
-    }
-
-    protected override void InitNoGrav()
-    {
-        base.InitNoGrav();
     }
 }

@@ -61,22 +61,8 @@ public class GrabbableAttachTrigger : MonoBehaviour
             {
                 if (grab == objectToCheck)
                 {
-                    Debug.Log(other.gameObject);
                     isObjectInBox = false;
                 }
-            }
-        }
-    }
-
-    public void Update()
-    {
-        GrabbableAttachedObject obj = objectToCheck as GrabbableAttachedObject;
-
-        if (obj != null)
-        {
-            if (obj.isDoor)
-            {
-                Debug.Log(isObjectInBox);
             }
         }
     }

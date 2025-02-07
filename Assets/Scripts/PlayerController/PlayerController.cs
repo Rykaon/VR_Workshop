@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,6 +26,7 @@ public class PlayerController : MonoBehaviour
         grab.InitializeComponent(this);
 
         inputAction = transform.parent.GetComponent<InputActionManager>().actionAssets[0];
+<<<<<<< HEAD
 
 <<<<<<< Updated upstream
         //Physics.IgnoreLayerCollision(3, 6);
@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
         Physics.IgnoreLayerCollision(3, 6);
         Physics.IgnoreLayerCollision(3, 7);
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of f328f69 (Merge branch 'Branche-dangereuse')
     }
 
     void Update()

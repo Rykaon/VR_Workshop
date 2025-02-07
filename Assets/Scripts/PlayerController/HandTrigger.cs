@@ -36,9 +36,11 @@ public class HandTrigger : MonoBehaviour
     {
         if (grabbableObjects == null || grabbableObjects.Count == 0)
         {
+            Debug.Log("yo");
             return null;
         }
 
+        Debug.Log("ya");
 
         float minDistance = float.MaxValue;
         int index = -1;

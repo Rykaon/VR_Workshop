@@ -594,7 +594,7 @@ PrefabInstance:
     - target: {fileID: 1841574238643773377, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.031
+      value: 0.087999985
       objectReference: {fileID: 0}
     - target: {fileID: 1841574238643773377, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
@@ -663,11 +663,6 @@ PrefabInstance:
       objectReference: {fileID: 6273753070566361413}
     - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
-      propertyPath: isFirstDisk
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
-        type: 3}
       propertyPath: movementTransform.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -685,11 +680,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Disk_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 7485312310618304467, guid: 9245384202813d64ab176fdc7c521aa2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.629
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -828,37 +818,37 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.542
+      value: 0.2551639
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.01178
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.9625455
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.15825617
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.004144079
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.9870511
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.025846817
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
         type: 3}
@@ -868,7 +858,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -71.782
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
         type: 3}
@@ -881,11 +871,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3036521955322547851, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
         type: 3}
-    - target: {fileID: -347728565822581756, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
-        type: 3}
-      propertyPath: m_Name
-      value: Door
-      objectReference: {fileID: 0}
     - target: {fileID: -347728565822581756, guid: e03f8508bbf6fb043bcdeda6ef2da60d,
         type: 3}
       propertyPath: m_IsActive
@@ -1017,12 +1002,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1249cc3a667bc514bb694c3ffed76e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKinematic: 0
   canBeGrab: 0
   isGrab: 0
   isKinematic: 0
   body: {fileID: 4341379932212942997}
   grabInteractable: {fileID: 7346248277062242336}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   isDoor: 1
 =======
@@ -1030,6 +1015,8 @@ MonoBehaviour:
 >>>>>>> Stashed changes
   isFirstDisk: 0
   isLastDisk: 0
+=======
+>>>>>>> parent of f328f69 (Merge branch 'Branche-dangereuse')
   isAttached: 1
   isSnap: 1
   leftHandAttached: {fileID: 981332458615385289}
@@ -1039,11 +1026,14 @@ MonoBehaviour:
   rightHandRenderer: {fileID: 2907207669087559898}
   collision: {fileID: 8738152405291670290}
   trigger: {fileID: 6019003288157049898}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   triggerCollider: {fileID: 0}
 =======
   TriggerCollider: {fileID: 0}
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of f328f69 (Merge branch 'Branche-dangereuse')
   movementTransform:
   - {fileID: 3407144934007221891}
   - {fileID: 6432844914464854592}
@@ -1353,11 +1343,6 @@ PrefabInstance:
     - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
       propertyPath: isAttached
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
-        type: 3}
-      propertyPath: isLastDisk
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
