@@ -108,7 +108,9 @@ public class GrabbableAttachedObject : GrabbableObject
             DirToMatch = -DirToDetach;
         }
 
+
         float angle = Mathf.Abs(Vector3.Angle(DirToMatch, DirToCheck));
+        Debug.Log("CHHHHHHHHHHHHHHHHHHHHHHHHHECK DIR = " + acceptanceAngle + " // " + angle);
 
         if (!isAttached)
         {
@@ -157,6 +159,7 @@ public class GrabbableAttachedObject : GrabbableObject
                     if (isDoor)
                     {
                         GameManager.instance.firstDisk.locked = false;
+                        GameManager.instance.firstDisk.disk.isKinematic = false;
                     }
                     else if (isFirstDisk)
                     {
@@ -188,6 +191,8 @@ public class GrabbableAttachedObject : GrabbableObject
                     if (isFirstDisk)
                     {
                         GameManager.instance.checkDiskStatus.InstallDisk(GameManager.instance.firstDisk);
+                        GameManager.instance.secondDisk.locked = false;
+                        GameManager.instance.secondDisk.disk.isKinematic = false;
                     }
                     else if (isLastDisk)
                     {

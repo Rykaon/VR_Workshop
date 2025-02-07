@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
         secondDisk.installed = true;
 
         //Pour toutes les cassettes qui sont en rab (afin d'éviter le soft lock)
-        for (int i =0; i< allDiskInScene.Length; i++)
+        /*for (int i =0; i< allDiskInScene.Length; i++)
         {
             allDiskInScene[i].locked = false;
             allDiskInScene[i].welded = true;
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
             allDiskInScene[i].nbrPuceRepaired = 0;
             allDiskInScene[i].nbrPuceToRepaired = 4;
             allDiskInScene[i].installed = false;
-        }
+        }*/
 
         Debug.Log("Initialisé");
     }

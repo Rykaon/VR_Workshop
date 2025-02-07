@@ -1429,7 +1429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  angleAccpetance: 0
+  angleAccpetance: 40
   distanceAccpetance: 0
   velocityTreshold: 1.25
   leftRenderer: {fileID: 0}
@@ -1464,6 +1464,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 39466869507282698, guid: 85a4edf10dfb57f47b49606a6a1ea766,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.61
+      objectReference: {fileID: 0}
     - target: {fileID: 2512683988254061145, guid: 85a4edf10dfb57f47b49606a6a1ea766,
         type: 3}
       propertyPath: m_Name
@@ -1518,6 +1523,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660381154743774063, guid: 85a4edf10dfb57f47b49606a6a1ea766,
+        type: 3}
+      propertyPath: canBeGrab
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8738152405291670290, guid: 85a4edf10dfb57f47b49606a6a1ea766,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

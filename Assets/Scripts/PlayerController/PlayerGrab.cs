@@ -190,6 +190,7 @@ public class PlayerGrab : PlayerComponent
                     if (rightAttachedObject != null)
                     {
                         bool isDirCheck = rightAttachedObject.CheckDirToAttach(rightHandDirection, angleAccpetance);
+                        //Debug.Log("DIR TO CHECK = " + isDirCheck);
                         
                         if (isDirCheck)
                         {
