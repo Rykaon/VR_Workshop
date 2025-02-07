@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit.Filtering;
 
 public class GrabbableObject : MonoBehaviour
 {
+    public bool isKinematic;
     public bool canBeGrab;
     public bool isGrab;
     [SerializeField] protected Rigidbody body;
@@ -25,6 +26,8 @@ public class GrabbableObject : MonoBehaviour
         SetCanBeGrab(canBeGrab);
         grabInteractable.selectFilters.Add(new CanBeGrabbedFilter(this));
         interactionManager = GameObject.Find("XR Interaction Manager").GetComponent<XRInteractionManager>();
+        isKinematic = false;
+        gameObject.layer = LayerMask.NameToLayer("Grabbable");
     }
 
     protected virtual void SetCanBeGrab(bool canBeGrab)
@@ -53,6 +56,7 @@ public class GrabbableObject : MonoBehaviour
     {
         if (isGrab != value)
         {
+            Debug.Log(value);
             isGrab = value;
 
             if (value)
@@ -74,7 +78,7 @@ public class GrabbableObject : MonoBehaviour
         }
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -83,7 +87,7 @@ public class GrabbableObject : MonoBehaviour
     }
 
 
-    private void InitNoGrav()
+    protected virtual void InitNoGrav()
     {
         GetComponent<Rigidbody>().useGravity = false;
         Vector3 forceStartGrav = new Vector3(Random.Range(-0.5f,0.5f), Random.Range(2.5f,3), Random.Range(-0.5f, 0.5f));

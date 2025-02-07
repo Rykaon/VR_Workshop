@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class PlayerController : MonoBehaviour
         grab.InitializeComponent(this);
 
         inputAction = transform.parent.GetComponent<InputActionManager>().actionAssets[0];
+
+        //Physics.IgnoreLayerCollision(3, 6);
+        //Physics.IgnoreLayerCollision(6, 7);
     }
 
     void Update()

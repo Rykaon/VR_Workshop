@@ -56,7 +56,6 @@ public class DiskCache : GrabbableObject
 
             if (canBeAttach)
             {
-                Debug.Log("ooooooooooooooooooooooooooooooooooooo");
                 SetCanBeGrab(false);
             }
         }
@@ -75,7 +74,6 @@ public class DiskCache : GrabbableObject
 
             if (canBeDettach)
             {
-                Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                 SetCanBeGrab(true);
             }
         }
@@ -88,6 +86,7 @@ public class DiskCache : GrabbableObject
         canBeGrab = false;
         collision.isTrigger = true;
         trigger.isDiskCache = true;
+        gameObject.layer = LayerMask.NameToLayer("DiskCache");
     }
 
     public override void SetIsGrab(bool value, XRDirectInteractor interactor)
