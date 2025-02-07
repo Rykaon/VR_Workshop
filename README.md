@@ -14,7 +14,11 @@
 
 ###
 
-<p align="left">-Gamemode : Solo<br>-Genre : VR ,Physic-based game<br>-Controller : Oculus Quest 2</p>
+<p align="left">
+  -Gamemode : Solo<br>
+  -Genre : VR ,Physic-based game<br>
+  -Controller : Oculus Quest 2
+</p>
 
 ###
 
@@ -23,7 +27,7 @@
 ###
 
 <div align="center">
-  ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.]([https://myoctocat.com/assets/images/base-octocat.svg](https://cdn.discordapp.com/attachments/1293963379144392765/1337412509996679199/Capture_decran_2025-02-07_141546.png?ex=67a759f6&is=67a60876&hm=45b377311f88a2773bcb8a5ba046cfe1819f3e7926bbc8e59046cc9b9b3659c7&))
+  <img height="400" src="https://media.discordapp.net/attachments/1293963379144392765/1337412509996679199/Capture_decran_2025-02-07_141546.png?ex=67a759f6&is=67a60876&hm=45b377311f88a2773bcb8a5ba046cfe1819f3e7926bbc8e59046cc9b9b3659c7&=&format=webp&quality=lossless&width=834&height=468"  />
   <img height="400" src="https://i.imgflip.com/65efzo.gif"  />
   <img height="400" src="https://i.imgflip.com/65efzo.gif"  />
   <img height="400" src="https://i.imgflip.com/65efzo.gif"  />
