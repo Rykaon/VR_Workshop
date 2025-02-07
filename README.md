@@ -43,10 +43,10 @@
 ###
 
 <div align="center">
-  <img height="250" src="https://media.discordapp.net/attachments/1293963379144392765/1337412509996679199/Capture_decran_2025-02-07_141546.png?ex=67a759f6&is=67a60876&hm=45b377311f88a2773bcb8a5ba046cfe1819f3e7926bbc8e59046cc9b9b3659c7&=&format=webp&quality=lossless&width=834&height=468"  />
-  <img height="250" src="https://cdn.discordapp.com/attachments/1293963379144392765/1337420199757877278/Capture_decran_2025-02-07_144614.png?ex=67a7611f&is=67a60f9f&hm=d924a64c06e7090ca836a6cd50d7bc005ebac6d0d3ed64eb277e45d0fbf2c402&"  />
-  <img height="250" src="https://cdn.discordapp.com/attachments/1293963379144392765/1337420199321927752/Capture_decran_2025-02-07_145047.png?ex=67a7611f&is=67a60f9f&hm=15a1e542dcab4ad14c51525d6553709b598e2ed7b08dbec8fc9afe6b1002cc8b&"  />
-  <img height="250" src="https://cdn.discordapp.com/attachments/1293963379144392765/1337412510499868764/Capture_decran_2025-02-07_141758.png?ex=67a759f6&is=67a60876&hm=1ca74176528180b17d741c5c895093e06baaf5176254316ba5d8b630cf2145aa&"  />
+  <img height="250" src="https://cdn.discordapp.com/attachments/1051838581137735760/1337453381731614731/image.png?ex=67a78006&is=67a62e86&hm=9b0ae2835b062781a1cf668d5f466b5be4f7c411e85f63d1645fc54843771c48&"  />
+  <img height="250" src="https://cdn.discordapp.com/attachments/1051838581137735760/1337453382398513202/image.png?ex=67a78007&is=67a62e87&hm=45472fd785094bf1bd3a60b7c8a2dd13e19ffcdeb43ff25dcf4964dc0d3d3b3d&"  />
+  <img height="250" src="https://cdn.discordapp.com/attachments/1051838581137735760/1337453382889377903/image.png?ex=67a78007&is=67a62e87&hm=65119d3d5f68d84590e2ff9f3449a25c9518dd331ac3effae7e4e07d80dafcec&"  />
+  <img height="250" src="https://cdn.discordapp.com/attachments/1051838581137735760/1337453383308546109/image.png?ex=67a78007&is=67a62e87&hm=deea6e6932cdac10312190136873832d46cb3578713493f1c336cea810fdb01d&"  />
 </div>
 
 ###
