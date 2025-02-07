@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class DiskCache : GrabbableObject
 {
     public bool isSnap = true;
-    [SerializeField] private GrabbableAttachTrigger trigger;
+    [SerializeField] public GrabbableAttachTrigger trigger;
     [SerializeField] public List<DiskCacheAttach> diskCacheAttaches;
     [SerializeField] public Collider collision;
     Tween posTween;
@@ -83,10 +83,20 @@ public class DiskCache : GrabbableObject
     {
         base.InitializeObject();
 
-        canBeGrab = false;
-        collision.isTrigger = true;
-        trigger.isDiskCache = true;
         gameObject.layer = LayerMask.NameToLayer("DiskCache");
+
+        if (trigger != null)
+        {
+            collision.isTrigger = true;
+            trigger.isDiskCache = true;
+            trigger.diskCacheAttaches = diskCacheAttaches;
+        }
+
+        if (!canBeGrab)
+        {
+            Destroy(grabInteractable);
+            Destroy(body);
+        }
     }
 
     public override void SetIsGrab(bool value, XRDirectInteractor interactor)
@@ -126,8 +136,11 @@ public class DiskCache : GrabbableObject
         if (canBeGrab)
         {
             Debug.Log("SetCanGrab to True // " + isGrab);
-            body.isKinematic = false;
-            collision.isTrigger = false;
+            if (body == null)
+            {
+                body = gameObject.AddComponent<Rigidbody>();
+                body.AddForce((Vector3.up + new Vector3(Random.value, 0, Random.value)) * 15f, ForceMode.Impulse);
+            }
 
             if (isGrab)
             {
@@ -142,5 +155,12 @@ public class DiskCache : GrabbableObject
             collision.isTrigger = false;
             Debug.Log("SetCanGrab to False");
         }
+    }
+
+    protected IEnumerator Boom()
+    {
+        yield return new WaitForSecondsRealtime(0.35f);
+        trigger.objectToCheck = null;
+        Destroy(this.gameObject);
     }
 }

@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToCheck: {fileID: 4465673068093351499}
+  diskCacheAttaches: []
   isObjectInBox: 1
   isDiskCache: 0
 --- !u!1 &3280254247362256001
@@ -264,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToCheck: {fileID: 6162626003396055366}
+  diskCacheAttaches: []
   isObjectInBox: 1
   isDiskCache: 0
 --- !u!1 &7208203626160862750
@@ -397,6 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToCheck: {fileID: 7660381154743774063}
+  diskCacheAttaches: []
   isObjectInBox: 1
   isDiskCache: 0
 --- !u!1001 &504070315722983504
@@ -583,6 +586,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1587972489627151173, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
+      propertyPath: isSnap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587972489627151173, guid: 9245384202813d64ab176fdc7c521aa2,
+        type: 3}
       propertyPath: trigger
       value: 
       objectReference: {fileID: 7510715493225199962}
@@ -594,7 +602,7 @@ PrefabInstance:
     - target: {fileID: 1841574238643773377, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.031
+      value: 0.088
       objectReference: {fileID: 0}
     - target: {fileID: 1841574238643773377, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
@@ -664,8 +672,13 @@ PrefabInstance:
     - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
       propertyPath: isFirstDisk
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
+        type: 3}
+      propertyPath: triggerCollider
+      value: 
+      objectReference: {fileID: 6868863313043607551}
     - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
       propertyPath: movementTransform.Array.size
@@ -689,7 +702,7 @@ PrefabInstance:
     - target: {fileID: 7485312310618304467, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.629
+      value: 0.1967
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1034,7 +1047,7 @@ MonoBehaviour:
   rightHandRenderer: {fileID: 2907207669087559898}
   collision: {fileID: 8738152405291670290}
   trigger: {fileID: 6019003288157049898}
-  triggerCollider: {fileID: 0}
+  triggerCollider: {fileID: 4545768618974204138}
   movementTransform:
   - {fileID: 3407144934007221891}
   - {fileID: 6432844914464854592}
@@ -1263,6 +1276,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1587972489627151173, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
+      propertyPath: isSnap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587972489627151173, guid: 9245384202813d64ab176fdc7c521aa2,
+        type: 3}
       propertyPath: trigger
       value: 
       objectReference: {fileID: 19177401096310359}
@@ -1349,13 +1367,18 @@ PrefabInstance:
     - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
       propertyPath: isLastDisk
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
       propertyPath: AttachPoint
       value: 
       objectReference: {fileID: 2618095731731021196}
+    - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
+        type: 3}
+      propertyPath: triggerCollider
+      value: 
+      objectReference: {fileID: 2110527947402403108}
     - target: {fileID: 3562085364792391724, guid: 9245384202813d64ab176fdc7c521aa2,
         type: 3}
       propertyPath: movementTransform.Array.size

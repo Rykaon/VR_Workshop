@@ -23,13 +23,20 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        //movement.InitializeComponent(this);
-        grab.InitializeComponent(this);
+        if (movement != null)
+        {
+            movement.InitializeComponent(this);
+        }
+
+        if (grab != null)
+        {
+            grab.InitializeComponent(this);
+        }
 
         inputAction = transform.parent.GetComponent<InputActionManager>().actionAssets[0];
 
-        //Physics.IgnoreLayerCollision(3, 6);
-        //Physics.IgnoreLayerCollision(6, 7);
+        Physics.IgnoreLayerCollision(3, 6);
+        Physics.IgnoreLayerCollision(6, 7);
     }
 
     void Update()

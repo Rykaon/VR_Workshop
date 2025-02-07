@@ -312,6 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToCheck: {fileID: 1859451841}
+  diskCacheAttaches: []
   isObjectInBox: 1
   isDiskCache: 0
 --- !u!1 &410087039
@@ -1517,42 +1518,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4465673068093351499, guid: 85a4edf10dfb57f47b49606a6a1ea766,
-        type: 3}
-      propertyPath: isFirstDisk
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465673068093351499, guid: 85a4edf10dfb57f47b49606a6a1ea766,
-        type: 3}
-      propertyPath: triggerCollider
-      value: 
-      objectReference: {fileID: 1127192025}
-    - target: {fileID: 6162626003396055366, guid: 85a4edf10dfb57f47b49606a6a1ea766,
-        type: 3}
-      propertyPath: isLastDisk
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6162626003396055366, guid: 85a4edf10dfb57f47b49606a6a1ea766,
-        type: 3}
-      propertyPath: triggerCollider
-      value: 
-      objectReference: {fileID: 1779711706}
-    - target: {fileID: 7660381154743774063, guid: 85a4edf10dfb57f47b49606a6a1ea766,
-        type: 3}
-      propertyPath: triggerCollider
-      value: 
-      objectReference: {fileID: 1795972875}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85a4edf10dfb57f47b49606a6a1ea766, type: 3}
---- !u!65 &1127192025 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 6868863313043607551, guid: 85a4edf10dfb57f47b49606a6a1ea766,
-    type: 3}
-  m_PrefabInstance: {fileID: 1007310328}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1160543881 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3412649390972202448, guid: 895f6f3c2d334633b5800312285058d2,
@@ -2384,18 +2354,6 @@ Transform:
   - {fileID: 1414090330}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
---- !u!65 &1779711706 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 2110527947402403108, guid: 85a4edf10dfb57f47b49606a6a1ea766,
-    type: 3}
-  m_PrefabInstance: {fileID: 1007310328}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1795972875 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 4545768618974204138, guid: 85a4edf10dfb57f47b49606a6a1ea766,
-    type: 3}
-  m_PrefabInstance: {fileID: 1007310328}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1859451840
 GameObject:
   m_ObjectHideFlags: 0
@@ -3054,6 +3012,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7550899654744002901
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5452543136081341414, guid: b60a852f75f391a44af15c477c605a3c,
+        type: 3}
+      propertyPath: canBeGrab
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452543136081341414, guid: b60a852f75f391a44af15c477c605a3c,
+        type: 3}
+      propertyPath: diskCacheAttaches.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653953432704844403, guid: b60a852f75f391a44af15c477c605a3c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.294
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653953432704844403, guid: b60a852f75f391a44af15c477c605a3c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653953432704844403, guid: b60a852f75f391a44af15c477c605a3c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653953432704844403, guid: b60a852f75f391a44af15c477c605a3c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653953432704844403, guid: b60a852f75f391a44af15c477c605a3c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653953432704844403, guid: b60a852f75f391a44af15c477c605a3c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653953432704844403, guid: b60a852f75f391a44af15c477c605a3c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653953432704844403, guid: b60a852f75f391a44af15c477c605a3c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653953432704844403, guid: b60a852f75f391a44af15c477c605a3c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653953432704844403, guid: b60a852f75f391a44af15c477c605a3c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134635912189577403, guid: b60a852f75f391a44af15c477c605a3c,
+        type: 3}
+      propertyPath: m_Name
+      value: cassette_Couvercle_SCRIPT
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b60a852f75f391a44af15c477c605a3c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3066,4 +3102,5 @@ SceneRoots:
   - {fileID: 1642868731}
   - {fileID: 720361167}
   - {fileID: 727312099}
+  - {fileID: 7550899654744002901}
   - {fileID: 1007310328}

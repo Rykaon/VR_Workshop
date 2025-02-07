@@ -6,7 +6,7 @@ using UnityEngine;
 public class DiskCacheAttach : MonoBehaviour
 {
     [SerializeField] public bool isActive;
-    [SerializeField] DiskCache diskCache;
+    [SerializeField] public DiskCache diskCache;
     [SerializeField] MeshRenderer meshRenderer;
     bool canBeActivated = true;
 
@@ -17,7 +17,7 @@ public class DiskCacheAttach : MonoBehaviour
 
     public void SetActive(bool isActive)
     {
-        if (canBeActivated)
+        if (canBeActivated && diskCache != null)
         {
             canBeActivated = false;
             Debug.Log("activate");
