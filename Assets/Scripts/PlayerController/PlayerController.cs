@@ -39,8 +39,10 @@ public class PlayerController : MonoBehaviour
         Physics.IgnoreLayerCollision(3, 7);
         Physics.IgnoreLayerCollision(3, 8);
         Physics.IgnoreLayerCollision(3, 9);
+        Physics.IgnoreLayerCollision(3, 10);
         Physics.IgnoreLayerCollision(7, 8);
         Physics.IgnoreLayerCollision(8, 9);
+        Physics.IgnoreLayerCollision(8, 10);
     }
 
     void Update()

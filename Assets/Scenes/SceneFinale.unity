@@ -1207,8 +1207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 108773691}
   angleAccpetance: 20
-  distanceAccpetance: 10
-  velocityTreshold: 1.25
+  distanceAccpetance: 0
+  velocityTreshold: 1
   leftRenderer: {fileID: 0}
   rightRenderer: {fileID: 0}
 --- !u!114 &108773690
@@ -20718,6 +20718,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.001
       objectReference: {fileID: 0}
+    - target: {fileID: 188047591729746503, guid: 85a4edf10dfb57f47b49606a6a1ea766,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 757477007273265420, guid: 85a4edf10dfb57f47b49606a6a1ea766,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 966877760813214871, guid: 85a4edf10dfb57f47b49606a6a1ea766,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
     - target: {fileID: 981332458615385299, guid: 85a4edf10dfb57f47b49606a6a1ea766,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -21560,6 +21575,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4341379932212942997, guid: 85a4edf10dfb57f47b49606a6a1ea766,
         type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341379932212942997, guid: 85a4edf10dfb57f47b49606a6a1ea766,
+        type: 3}
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
@@ -21937,6 +21957,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.033651832
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132667302905314817, guid: 85a4edf10dfb57f47b49606a6a1ea766,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283517412925070234, guid: 85a4edf10dfb57f47b49606a6a1ea766,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702103167115273546, guid: 85a4edf10dfb57f47b49606a6a1ea766,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
