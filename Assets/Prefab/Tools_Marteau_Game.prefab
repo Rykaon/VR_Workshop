@@ -75,10 +75,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e2bdd5b9d7db542b71587a1df9e5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isKinematic: 0
   canBeGrab: 0
   isGrab: 0
   body: {fileID: 8837739928297918383}
   grabInteractable: {fileID: 3312662163944150447}
+  isBlowTorch: 0
+  trigger: {fileID: 0}
+  blowtorchFlame: {fileID: 0}
 --- !u!114 &8477611618770692469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +337,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4614063582609359381, guid: 51eaccfea4167624f8f9e37a337e3752,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8025232737784157202}
   m_SourcePrefab: {fileID: 100100000, guid: 51eaccfea4167624f8f9e37a337e3752, type: 3}
 --- !u!4 &3324287790076389514 stripped
 Transform:
@@ -341,3 +349,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 10754699723721756}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4624712166301077001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4614063582609359381, guid: 51eaccfea4167624f8f9e37a337e3752,
+    type: 3}
+  m_PrefabInstance: {fileID: 10754699723721756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &8025232737784157202
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624712166301077001}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5265753853481194885, guid: 89d2ebf8c18880b4bbd019112b4b2b5b, type: 3}

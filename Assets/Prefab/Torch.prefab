@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.45305276, y: 0.9622794, z: 0.17411542}
-  m_Center: {x: 0.02200371, y: 0.119448274, z: -0.011467159}
+  m_Size: {x: 0.5445901, y: 0.2210702, z: 0.17411542}
+  m_Center: {x: 0.5281025, y: 0.4900531, z: -0.011467157}
 --- !u!114 &1774928959759511759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08a8ce9fd5765a42a53aae6b4a064ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blowTorch: {fileID: 0}
+  blowTorch: {fileID: 5101138678674826640}
   diskCacheAttach: {fileID: 0}
 --- !u!1 &4825364676607365759
 GameObject:
@@ -126,8 +126,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8652792, y: 0.18981355, z: 0.25816333}
-  m_Center: {x: 1.6757157, y: 1.0065478, z: -0.0062866807}
+  m_Size: {x: 1.0002465, y: 1.812673, z: 0.25816333}
+  m_Center: {x: 0.49992818, y: 0.2388113, z: -0.0062866756}
 --- !u!114 &5101138678674826640
 MonoBehaviour:
   m_ObjectHideFlags: 0
