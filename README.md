@@ -1,4 +1,4 @@
-<h2 align="center">VR Project - Arcade Glitch</h2>
+<h2 align="center">VR Project - Arcade Glitch   <img height="70" src="https://cdn.discordapp.com/attachments/1335906288093106217/1337442664399900766/IMG_0664.png?ex=67a7760b&is=67a6248b&hm=9ef0f87f860109837a8d5df42ed2c2b83fb84318c5fbbbfd726c4231cc5d7301&"  /></h2>
 
 ###
 
@@ -6,7 +6,7 @@
 
 ###
 
-<p align="left">Arcade Glitch is a <b>Virtual Reality game</b> made in five days by a student team. <br>In this game, the player embodies an arcade terminal repairer. The player is sitting on a chair and must push himself thanks to the elements of scenery to move and reach tools, in order to repair a special arcade terminal. This machine has created a time-space rift witch cause glitches and changes in reality.</p>
+<p align="left">Arcade Glitch is a <b>Virtual Reality game</b> made in five days by the ICAN students from Lille. During this week, we had to create our first VR game by using Unity Engine.</p> 
 
 ###
 
@@ -17,21 +17,26 @@
 <p align="left">
   -Gamemode : Solo<br>
   -Genre : VR ,Physic-based game<br>
-  -Controller : Oculus Quest 2
+  -Controller : Oculus Quest 2<br><br>
+
+  In this game, the player embodies an arcade terminal repairer. The player is sitting on a chair and must push himself thanks to the elements of scenery to move and reach tools, in order to repair a special arcade terminal. This machine has created a time-space rift witch cause glitches and changes in reality.
 </p>
 
 ###
 
 <h2 align="left">How to instal ?</h2>
 
+### Steps to install:
+
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/yourusername/yourrepository.git
+
 ###
 
-<p align="left">
-  10+40
-</p>
-
-###
-###
+2. Check this tutoriel to instal the apk meta quest:  
+   ```bash
+   https://zybervr.com/en-eu/blogs/news/step-by-step-guide-on-how-to-install-apk-files-on-meta-quest
 
 <h2 align="left">Gameplay Pictures</h2>
 
@@ -68,8 +73,8 @@
   @kaiiros7 (as Game Designer / Sound Designer)<br>
   @byJaveo (as Game Artist)<br>
   @Weedoos (as Game Artist)<br>
+  @Wolfgang5960 (as Game Artist)<br>
   @Eloxse (VFX Artist)<br>
-  @Wolfgang5960 (as Game Artist)
 </div>
 
 ###
