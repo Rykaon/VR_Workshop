@@ -28,9 +28,9 @@
 
 ### Steps to install:
 
-1. Clone the repository:  
+1. Download the project:  
    ```bash
-   git clone https://github.com/yourusername/yourrepository.git
+   You can find it in this repository.
 
 ###
 
