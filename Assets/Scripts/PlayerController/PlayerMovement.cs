@@ -18,7 +18,7 @@ public class PlayerMovement : PlayerComponent
     [SerializeField] private float speedMultiplier;
     private string handUsed;
     public Transform playerCamera;
-    private int numberOfTurn;
+    public int numberOfTurn;
 
     public bool gravity;
 

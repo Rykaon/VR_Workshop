@@ -17,9 +17,9 @@ TagManager:
   - Grabbable
   - DiskCache
   - Disk
-  - Tool
-  - Door
-  - 
+  - Torch
+  - TopDisk
+  - Vis
   - 
   - 
   - 

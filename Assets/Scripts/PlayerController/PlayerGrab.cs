@@ -179,7 +179,6 @@ public class PlayerGrab : PlayerComponent
             {
                 SetHandIsMoving(true, false);
                 rightHandDistance = Mathf.Abs(Vector3.Distance(previousRightHandPosition, rightPosition));
-            Debug.Log(rightHandDistance);
 
                 if (rightHandDistance >= distanceAccpetance)
                 {
