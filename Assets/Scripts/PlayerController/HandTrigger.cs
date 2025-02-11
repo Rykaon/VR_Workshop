@@ -10,7 +10,6 @@ public class HandTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
         if (other.TryGetComponent<GrabbableObject>(out GrabbableObject grab))
         {
             if (!grabbableObjects.Contains(grab))

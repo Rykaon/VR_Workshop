@@ -4,62 +4,45 @@ using UnityEngine;
 
 public class PuceScript : MonoBehaviour
 {
-    public GrabbableAttachedObject disk;
-    public int actualCounter = 0;
-    public int stepCounter;
+  
     private bool isRepaired = false;
 
     public List<Material> materials;
 
     public Renderer rendererPuce;
-    int materialCount = 0;
-    int maxCount = 9;
+    public GameManager GM;
+    public int materialCount = 0;
+    int maxCount;
 
-    
-    private void OnTriggerExit(Collider other)
+    private void Awake()
     {
-        if (other.TryGetComponent(out GrabbableObject obj) && actualCounter < stepCounter)
+        rendererPuce = GetComponent<Renderer>();
+        maxCount = materials.Count-1;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!GM.firstDisk.repaired && !GM.firstDisk.welded)
         {
-            GrabbableTool tool = obj as GrabbableTool;
-
-            stepCounter = 1;
-
-            if (tool != null)
+            materialCount++;
+            rendererPuce.material = materials[materialCount];
+            if (materialCount >= maxCount)
             {
-                if (tool.isBlowTorch)
-                {
-                    stepCounter = 3;
-                }
-            }
-
-            actualCounter += stepCounter;
-
-            if (materialCount == 0 && actualCounter == 3)
-            {
-                materialCount++;
-                rendererPuce.materials[0] = materials[materialCount];
-            }
-            else if (materialCount == 1 && actualCounter == 6)
-            {
-                materialCount++;
-                rendererPuce.materials[0] = materials[materialCount];
-            }
-            else if (materialCount == 2 && actualCounter == 9)
-            {
-                materialCount++;
-                rendererPuce.materials[0] = materials[materialCount];
-
-                if (!isRepaired)
-                {
-                    Rafitstole();
-                }
+                GM.firstDisk.repaired = true;
+                
+                
             }
         }
+        
+    }
+    
+    public void Rafitstole()
+    {
+        GM.firstDisk.repaired = true;
 
     }
 
-    public void Rafitstole()
-    {
+    /*
         isRepaired = true;
 
         if (disk == GameManager.instance.firstDisk.disk)
@@ -79,10 +62,7 @@ public class PuceScript : MonoBehaviour
                     GameManager.instance.checkDiskStatus.RepairDisk(GameManager.instance.allDiskInScene[i]);
                 }
             }
-        }
-        
-    }
-
+        }*/
 }
 
 

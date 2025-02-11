@@ -7,7 +7,7 @@ public class BlowTorchScript : MonoBehaviour
     private bool activated;
     [SerializeField] private VisualEffect blowtorchFlame;
     [SerializeField] private TopDiskScript topDiskScript;
-
+    public GameManager GM;
     
     void Start()
     {
@@ -24,7 +24,6 @@ public class BlowTorchScript : MonoBehaviour
     public void ActivateBlowTorch()
     {
         activated = true;
-        Debug.Log("Debut");
         blowtorchFlame.Play();
     }
 
@@ -56,7 +55,11 @@ public class BlowTorchScript : MonoBehaviour
 
     private void Unscrew(Collider screw)
     {
-        screw.GetComponent<Renderer>().enabled = false;
-        topDiskScript.CheckIfOpen();
+        if (GM.firstDisk.locked)
+        {
+            screw.GetComponent<Renderer>().enabled = false;
+            topDiskScript.CheckIfOpen();
+        }
+        
     }
 }

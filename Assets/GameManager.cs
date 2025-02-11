@@ -11,6 +11,7 @@ public struct DiskStatus
     public bool repaired;//Réparée (Les puces de la cassettes sont toutes réparées)
     public int nbrPuceRepaired;
     public int nbrPuceToRepaired;
+    public bool plaquePose;
     public bool installed;//Instalée (Si la disquette est sur la borne d'arcade ou non)
     
 }
@@ -66,17 +67,18 @@ public class GameManager : MonoBehaviour
         firstDisk.locked = true;
         firstDisk.welded = true;
         firstDisk.repaired = false;
-        firstDisk.nbrPuceRepaired = 0;
-        firstDisk.nbrPuceToRepaired = 4;
         firstDisk.installed = true;
+        firstDisk.plaquePose = false;
 
-        secondDisk.disk = secondDiskObject;
+
+    secondDisk.disk = secondDiskObject;
         secondDisk.locked = true;
         secondDisk.welded = true;
         secondDisk.repaired = false;
         secondDisk.nbrPuceRepaired = 0;
         secondDisk.nbrPuceToRepaired = 4;
         secondDisk.installed = true;
+        firstDisk.plaquePose = false;
 
         //Pour toutes les cassettes qui sont en rab (afin d'éviter le soft lock)
         /*for (int i =0; i< allDiskInScene.Length; i++)
@@ -121,5 +123,10 @@ public class GameManager : MonoBehaviour
         {
             LaunchSecondPhase();
         }
+    }
+
+    public void UnlockFirstCassette()
+    {
+        firstDisk.locked = true;
     }
 }

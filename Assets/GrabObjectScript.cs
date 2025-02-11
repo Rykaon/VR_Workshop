@@ -19,7 +19,6 @@ public class GrabObjectScript : MonoBehaviour
     public void StartGrab()
     {
         rb.isKinematic = false;
-        Debug.Log(rb.isKinematic);
     }
 
     public void EndGrab()

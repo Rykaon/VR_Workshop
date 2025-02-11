@@ -5,6 +5,7 @@ public class TopDiskScript : MonoBehaviour
 {
     [SerializeField] private GameObject[] allScrews;
     [SerializeField] private FixedJoint joint;
+     public GameManager GM;
 
     private void OpenTopPart()
     {
@@ -14,7 +15,7 @@ public class TopDiskScript : MonoBehaviour
         body.useGravity = false;
         GetComponent<XRGrabInteractable>().enabled = true;
         Destroy(joint);
-
+        GM.firstDisk.welded = false;
     }
 
     public void CheckIfOpen()
